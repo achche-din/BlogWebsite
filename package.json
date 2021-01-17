@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pkc3766/BlogWebsite/issues"
   },
-  "homepage": "https://github.com/pkc3766/BlogWebsite#readme"
+  "homepage": "https://github.com/pkc3766/BlogWebsite#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
