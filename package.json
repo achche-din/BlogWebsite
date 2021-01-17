@@ -1,0 +1,19 @@
+{
+  "name": "blogwebsite",
+  "version": "1.0.0",
+  "description": "Blogs about Programming",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkc3766/BlogWebsite.git"
+  },
+  "author": "pushpendrakumar/sachinbisht",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkc3766/BlogWebsite/issues"
+  },
+  "homepage": "https://github.com/pkc3766/BlogWebsite#readme"
+}
