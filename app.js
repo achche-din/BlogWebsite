@@ -11,6 +11,7 @@ app.use(express.static("public"));
 //can call utiltiy functions using utilityFunctions.getDate() etc
 
 app.get("/",function(req,res){
+    
     res.render("home");
 });
 
