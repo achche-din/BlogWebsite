@@ -27,6 +27,36 @@ app.get("/cs-fundamentals/:subject",function(req,res){
     res.render(path,{subject:subject});
 });
 
+app.get("/dsa/:topic",function(req,res){
+    const topic = _.kebabCase(req.params.topic);
+    console.log(topic);
+    const path='pages/dsa/post';
+    //res.send();
+    res.render(path,{topic:topic});
+});
+
+app.get("/system-design",function(req,res){
+    const path='pages/system-design/post';
+    res.render(path);
+});
+
+app.get("/interview-exp",function(req,res){
+    const path='pages/interview-exp/post';
+    //res.send();
+    res.render(path);
+});
+
+app.get("/compose",function(req,res){
+    const path='pages/compose';
+    //res.send();
+    res.render(path);
+});
+
+app.get("/contact",function(req,res){
+    const path='pages/contact';
+    //res.send();
+    res.render(path);
+});
 
 //handles non routable paths
 app.get('*', function(req, res) {  
