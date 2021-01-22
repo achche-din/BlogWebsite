@@ -29,27 +29,34 @@
 </head>
 <body>
     <script src="/ckEditor/ckeditor.js" type="text/javascript"></script>
-    <form action="" method="POST">
+    <% if(message){ %>
+        <div style="text-align: center" class="alert alert-<%=message.type%>">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong><%=message.intro%></strong> <%=message.message%>
+        </div>
+    <% } %>
+    
+    <form action="" method="post">
+       
         <div class="form-group title" >
-            <input type="text" class="form-control" id="Title" placeholder="Title">
+            <input type="text" class="form-control" name="title" placeholder="Title">
         </div>
         <div class="form-row companyAndName">
             <div class="col">
-                <input type="text" class="form-control"  placeholder="company name">
+                <input type="text" class="form-control" name="companyName"  placeholder="company name">
             </div>
             <div class="col">
-              <input type="text" class="form-control"  placeholder="your name">
+              <input type="text" class="form-control" name="name" placeholder="your name">
             </div>
         </div>
           <div class="form-group contact-info">
-            <input type="text" class="form-control" id="contact-info" placeholder="email">
+            <input type="text" class="form-control" name="email" placeholder="email">
           </div>
-        <textarea name="editor" id="editor" cols="10" rows="30" ></textarea>
-        
-        <button type="button" class="btn btn-primary submitButton">submit</button>
+        <textarea name="content" id="editor" cols="10" rows="30" ></textarea>
+        <button type="submit" class="btn btn-primary submitButton">submit</button>
     </form>
     <script>
-        CKEDITOR.replace("editor");
+        CKEDITOR.replace("content");
     </script>
 </body>
 </html>
