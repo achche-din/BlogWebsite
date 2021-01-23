@@ -8,19 +8,29 @@ body{
 	background-size: cover;
 	height: 100vh;
 }
-header *{
+
+.headerNav header *{
 	box-sizing: border-box;
 	margin: 0;
     padding: 0;
 }
 
-header{
+
+
+header.headerNav{
 	height: 105px;
 	width: 100%;
 	position: relative;
 	background-color: white;
 	box-shadow: 0px 2px 5px rgba(0,0,0,.4);
 }
+.navbarTitle{
+	margin: 45%;
+	display: inline;
+	line-height: 2;
+	font-size: 50px;
+}
+
 .CodeBaylogo{
     width: 200px;
     height: 100px;
@@ -41,7 +51,7 @@ header{
 	transition: all .3s ease-in;
 	-webkit-transition: all .3s ease-in;
 }
-.head .tile.socialmedia{
+ .head .tile.socialmedia{
 	color: #0b253e;
 	font-size: 50px;
 	text-align: center;
@@ -52,7 +62,7 @@ header{
 header.clicked .head .tile.socialmedia{
 	color: white;
 }
-.head .burger{
+ .head .burger{
 	margin-left: 25px;
 	padding: 5px;
 	cursor: pointer;
@@ -103,13 +113,6 @@ header.clicked .burger:hover .meat{
 	-webkit-transform: rotate(270deg);
 }
 
-
-
-
-
-
-
-
 .nav-modal{
 	position: fixed;
 	top: 0px;
@@ -147,20 +150,20 @@ header.clicked .nav-modal .blob{
 	border-radius: 0px;
 }
 
-nav{
+.headerNav nav{
 	position: fixed;
 	left: 20%;
 	top: 30%;
 	color: white;
 }
-nav a{
+.headerNav nav a{
 	color: white;
 	text-decoration: none;
 	font-family: sans-serif;
 	font-family: 'Oswald', sans-serif;
 	font-size: 30px;
 }
-nav ul li{
+.headerNav nav ul li{
 	list-style: none;
 	text-align: right;
 	border-right: 6px solid white;
@@ -168,7 +171,7 @@ nav ul li{
 	padding-right: 10px;
 	position: relative;
 }
-nav{
+.headerNav nav{
 	opacity: 0;
 	transition: all .3s ease-in;
 	-webkit-transition: all .3s ease-in;
@@ -181,34 +184,34 @@ header.clicked nav{
 	opacity: 1;
 }
 
-nav ul li ul{
+.headerNav nav ul li ul{
 	position: absolute;
 	right: -300px;
 	top: -4px;
 	display: none;
 }
-nav ul li ul li{
+.headerNav nav ul li ul li{
 	border: none;
 	padding-bottom: 10;
 	padding-left: 10px;
 	height: 50px;
 	width: 300px;
 }
-nav ul li ul li a{
+.headerNav nav ul li ul li a{
 	display: block;
 	height: 50px;
 	font-size: 20px;
 	text-align: left;
 	padding: 10px;
 }
-nav ul li.selected ul{
+.headerNav nav ul li.selected ul{
 	display: block;
 }
 
-nav ul li.notselected a{
+.headerNav nav ul li.notselected a{
 	opacity: .5;
 }
-nav ul li.selected ul li a{
+.headerNav nav ul li.selected ul li a{
 	opacity: 1;
 }
 
@@ -221,16 +224,16 @@ nav ul li.selected ul li a{
 }
 @media screen and (max-width:580px){
 	.CodeBaylogo{width: 130px; padding-top: 30px;}
-	nav ul li a{
+	.headerNav nav ul li a{
 		font-size: 16px;
 	}
-	nav ul li ul{
+	.headerNav nav ul li ul{
 		top: -9px;
 	}
-	nav ul li ul li{
+	.headerNav nav ul li ul li{
 		height: 40px;
 	}
-	nav ul li ul li a{
+	.headerNav nav ul li ul li a{
 		font-size: 16px;
 		height: 40px;
 	}

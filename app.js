@@ -134,7 +134,7 @@ app.post("/compose",[body('name', 'name should not be empty').trim().isLength({ 
                     res.redirect("compose");
                 }
                 else{
-                    res.send("error occured");
+                    res.send("error occured please try again");
                 }
             });
         }

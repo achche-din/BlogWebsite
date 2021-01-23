@@ -4,9 +4,9 @@ $(document).ready(function() {
             $('header').toggleClass('clicked');
         });
     
-        $('nav ul li').click(function(){
-            $('nav ul li').removeClass('selected');
-            $('nav ul li').addClass('notselected');
+        $('.headerNav nav ul li').click(function(){
+            $('.headerNav nav ul li').removeClass('selected');
+            $('.headerNav nav ul li').addClass('notselected');
             $(this).toggleClass('selected');
             $(this).removeClass('notselected');
         });
