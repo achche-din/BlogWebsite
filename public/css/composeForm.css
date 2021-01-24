@@ -1,14 +1,11 @@
 .title{
-    margin: 40px 40px 0px 40px;
+    margin: 10px 40px 0px 40px;
 }
 
-.companyAndName{
+.name-email{
     padding-left: 40px;
     padding-right: 40px;
-}
-
-.contact-info{
-    margin: 10px 40px 10px 40px;
+    padding-bottom: 10px;
 }
 
 
@@ -17,10 +14,3 @@
    margin-top: 10px;
 }
 
-section{
-    display:inline;
-    background-color:orange;
-    width: 300px;
-    margin-left: 40px;
-    padding-left: 5px;
-}

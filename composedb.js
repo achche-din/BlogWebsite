@@ -13,7 +13,6 @@ module.exports.createSchema=function(){
     //connection();
     const composedb= mongoose.Schema({
         title:String,
-        companyName:String,
         name:String,
         email:String,
         content:String

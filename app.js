@@ -42,15 +42,28 @@ app.get("/cs-fundamentals/:subject",function(req,res){
     console.log(subject);
     const path='pages/cs-fundamentals/post';
     //res.send();
-    res.render(path,{subject:subject});
+    var links={
+        Encapsulation:['what is encapsulation','why encapsulation','How to apply'],
+        Inheritance:['what is Inheritance','why Inheritance','How to apply'],
+        Polymorphism:['what is polymorphism','why polymorphism','How to apply'],
+        Abstraction:['what is Abstraction','why Abstraction','How to apply']
+    };
+    // links=JSON.stringify(links);
+    res.render(path,{subject:subject,links:links});
 });
 
 app.get("/dsa/:topic",function(req,res){
     const topic = _.kebabCase(req.params.topic);
     console.log(topic);
     const path='pages/dsa/post';
+    var links={
+        Arrays:['what are Arrays?','features of array'],
+        LinkedLists:['what are linkedlists?','features of linkedlists'],
+        Trees:['what are Trees?','Binary trees','Binary Search trees','Heaps'],
+        Graphs:['what are Graphs?','Graph representation','Types of graphs']
+    };
     //res.send();
-    res.render(path,{topic:topic});
+    res.render(path,{topic:topic,links:links});
 });
 
 app.get("/system-design",function(req,res){
@@ -76,10 +89,10 @@ app.get("/contact",function(req,res){
     res.render(path);
 });
 
-app.post("/compose",[body('name', 'name should not be empty').trim().isLength({ min: 1 }),
-    body('companyName', 'company name should not be empty').trim().isLength({ min: 1 }),
+app.post("/compose",[body('name', 'Invalid name').trim().isLength({ min: 1 }),
+    body('title', 'Invalid title').trim().isLength({ min: 1 }),
     body('email', 'Invalid email').trim().isEmail(),
-    body('content', 'Article must have characters > 50').trim().isLength({ min: 1 })],
+    body('content', 'Article must have characters > 50').trim().isLength({ min: 50 })],
     function(req,res){
     //need to validate form also
     let errors = validationResult(req);
@@ -117,13 +130,11 @@ app.post("/compose",[body('name', 'name should not be empty').trim().isLength({ 
             message: 'your article has been submitted successfully'
           }
             const title=req.body.title;
-            const companyName= req.body.companyName;
             const name=req.body.name;
             const email=req.body.email;
             const content=req.body.content;
             const post = new Post({
                 title: title,
-                companyName: companyName,
                 name:name,
                 email: email,
                 content: content
