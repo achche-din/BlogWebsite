@@ -220,10 +220,10 @@ header.clicked nav{
 
 
 @media screen and (max-width:820px){
-	.CodeBaylogo{margin-left: 50px;}
+	.navbarTitle{margin-left: 50px;}
 }
 @media screen and (max-width:580px){
-	.CodeBaylogo{width: 130px; padding-top: 30px;}
+	.navbarTitle{width: 130px; padding-top: 30px;}
 	.headerNav nav ul li a{
 		font-size: 16px;
 	}
@@ -239,10 +239,10 @@ header.clicked nav{
 	}
 }
 @media screen and (max-width:500px){
-	.CodeBaylogo{display: none;}
+	.navbarTitle{display: none;}
 }
 @media screen and (max-width:320px){
-	header .head .tile.socialmedia{
+	header .head  .tile.socialmedia {
 		display: none;
 	}
 }
