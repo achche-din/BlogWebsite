@@ -9,7 +9,8 @@ const mongoose = require('mongoose');
 const { body,validationResult } = require('express-validator');
 // const utilityFunctions = require(__dirname+"/scripts/utilityFunctions.js");
 //const homePageScript = require(__dirname+"/scripts/homePageScript");
-const composedb = require(__dirname+'/composedb.js');
+const blogDb = require(__dirname+'/db.js');
+const utilityFunctions = require(__dirname+'/utilityFunctions.js');
 const app = express();
 app.set('view engine','ejs');
 app.set('views', __dirname + '/views');
@@ -30,8 +31,9 @@ app.use(express.static("public"));
 
 //console.log(utilityFunctions);
 //can call utiltiy functions using utilityFunctions.getDate() etc
-composedb.connection();
-const Post = composedb.createSchema();
+blogDb.connection();
+const Compose = blogDb.createComposeCollection();
+const Post = blogDb.createPostsCollection();
 
 app.get("/",function(req,res){
     res.render("pages/home");
@@ -39,77 +41,46 @@ app.get("/",function(req,res){
 
 app.get("/cs-fundamentals/:subject",function(req,res){
     const subject = _.kebabCase(req.params.subject);
-    console.log(subject);
     const path='pages/cs-fundamentals/post';
     //res.send();
-    var links=null;
-    if(subject==='object-oriented-programming')
-    {
-        links={
-            Encapsulation:['what is encapsulation?','why encapsulation?','When and How to apply?'],
-            Inheritance:['what is Inheritance?','why Inheritance?','When and How to apply?'],
-            Polymorphism:['what is polymorphism?','why polymorphism?','When and How to apply?'],
-            Abstraction:['what is Abstraction?','why Abstraction?','When and How to apply?']
-        };
-    }
-    else if(subject==='database-management')
-    {
-        links={
-            Databases:['What are Databases?','Why databases?','MySQL','Mongodb'],
-            SQL:['what is SQL?','Why SQL?','SQL query Structure','SQL Joins','SQL Views','SQL Indexes'],
-            Design:['what is Normalisation?','Why Normalisation','1NF','2NF','3NF','BCNF'],
-        };
-    }
-    else if(subject==='computer-networks')
-    {
-        links={
-            ApplicationLayer:['Applications','DNS','DHCP'],
-            TransportLayer:['Applications','TCP','UDP'],
-            NetworkLayer:['Applications','IP','DV algorithm','OSPF algorithm'],
-            DataLinkLayer:['Applications','Flow control','Error Control','MAC'],
-            PhysicalLayer:['Applications','Types of Media','Media comparision']
-        };
-    }
-    else if(subject==='operating-system')
-    {
-        links={
-            Intro:['What is OS?','Why OS?'],
-            Scheduling:['What is Scheduling?','Premptive VS non-Premptive','FCFS','RR'],
-        };
-    }
+    let links=utilityFunctions.getCsfLinks(subject);
     // links=JSON.stringify(links);
-    res.render(path,{subject:subject,links:links});
+    let content ='hey there';
+    res.render(path,{subject:subject,links:links,content:content});
+});
+
+app.get("/cs-fundamentals/:subject/:post",function(req,res){
+    const subject = _.kebabCase(req.params.subject);
+    const post = _.kebabCase(req.params.post);
+    console.log('in csf');
+    console.log(post);
+    const path='pages/cs-fundamentals/post';
+    let links = utilityFunctions.getCsfLinks(subject);
+    let content='I am good here.How are you?';
+    res.render(path,{subject:subject,links:links,content:content});
+});
+
+app.get("/dsa/:topic/:post",function(req,res){
+    const topic = _.kebabCase(req.params.topic);
+    const post = _.kebabCase(req.params.post);
+    console.log('in dsa');
+    console.log(post);
+    const path='pages/dsa/post';
+    let links = utilityFunctions.getDsaLinks(topic);
+    let content='hope you are fine?';
+    res.render(path,{topic:topic,links:links,content:content});
 });
 
 app.get("/dsa/:topic",function(req,res){
     const topic = _.kebabCase(req.params.topic);
-    console.log(topic);
+    //console.log(topic);
     const path='pages/dsa/post';
-    var links=null;
-    if(topic==='data-structures')
-    {
-        links={
-            Arrays:['what are Arrays?','features of array'],
-            LinkedLists:['what are linkedlists?','features of linkedlists'],
-            Trees:['what are Trees?','Binary trees','Binary Search trees','Heaps'],
-            Graphs:['what are Graphs?','Graph representation','Types of graphs']
-        };
-    }
-    else if(topic==='algorithms')
-    {
-        links={
-            Searching:['Linear search','Binary Search','Ternary Search'],
-            Sorting:['Bubble sort','Insertion sort','Selection sort','Merge sort',
-                        'Quick sort','Counting sort'],
-            Recursion:['What is Recursion?','Visualisation of Recursion','Coin Change Problem'],
-            Greedy:['What are Greedy algorithms?','Job scheduling algoritm','Dijkistra algoritm'],
-            DynamicProgramming:['what is Dynamic programming','Kadane algorithm','Coin change Problem']
-        };
-    }
-    
-    //res.send();
-    res.render(path,{topic:topic,links:links});
+    let content ='how are you?';
+    let links = utilityFunctions.getDsaLinks(topic);
+    res.render(path,{topic:topic,links:links,content:content});
 });
+
+
 
 app.get("/system-design",function(req,res){
     const path='pages/system-design/post';
@@ -128,11 +99,6 @@ app.get("/compose",function(req,res){
     res.render(path);
 });
 
-app.get("/contact",function(req,res){
-    const path='pages/contact';
-    //res.send();
-    res.render(path);
-});
 
 app.post("/compose",[body('name', 'Invalid name').trim().isLength({ min: 1 }),
     body('title', 'Invalid title').trim().isLength({ min: 1 }),
@@ -178,7 +144,7 @@ app.post("/compose",[body('name', 'Invalid name').trim().isLength({ min: 1 }),
             const name=req.body.name;
             const email=req.body.email;
             const content=req.body.content;
-            const post = new Post({
+            const post = new Compose({
                 title: title,
                 name:name,
                 email: email,
