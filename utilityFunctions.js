@@ -4,6 +4,7 @@ module.exports.getDsaLinks=function(topic){
     {
         links={
             Arrays:['what are Arrays?','features of array'],
+            Stack:['All about Stack'],
             LinkedLists:['what are linkedlists?','features of linkedlists'],
             Trees:['what are Trees?','Binary trees','Binary Search trees','Heaps'],
             Graphs:['what are Graphs?','Graph representation','Types of graphs']

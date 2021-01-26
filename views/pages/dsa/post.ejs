@@ -34,7 +34,8 @@
                             <ul class="collapse list-unstyled" id='<%=prop%>' >
                                 <%for(var j=0;j<val.length;j++){%>
                                     <li>
-                                        <a href="/dsa/<%=topic%>/<%=val[j]%>"><%=val[j]%></a>
+                                        <%var postTitle=_.kebabCase(val[j]);%>
+                                        <a href="/dsa/<%=topic%>/<%=postTitle%>"><%=val[j]%></a>
                                     </li>
                                 <%}%>
                             </ul>

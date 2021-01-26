@@ -18,7 +18,7 @@ app.engine('html', require('ejs').renderFile);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser('secret'))
 app.use(session({cookie: {maxAge: null}}))
-
+app.locals._=_;
 //flash message middleware
 app.use((req, res, next)=>{
     res.locals.message = req.session.message
@@ -33,7 +33,7 @@ app.use(express.static("public"));
 //can call utiltiy functions using utilityFunctions.getDate() etc
 blogDb.connection();
 const Compose = blogDb.createComposeCollection();
-const Post = blogDb.createPostsCollection();
+// const Post = blogDb.createPostsCollection();
 
 app.get("/",function(req,res){
     res.render("pages/home");
@@ -49,26 +49,39 @@ app.get("/cs-fundamentals/:subject",function(req,res){
     res.render(path,{subject:subject,links:links,content:content});
 });
 
-app.get("/cs-fundamentals/:subject/:post",function(req,res){
-    const subject = _.kebabCase(req.params.subject);
-    const post = _.kebabCase(req.params.post);
+app.get("/cs-fundamentals/:subject/:title",function(req,res){
+    const subject = req.params.subject;
+    const title = req.params.title;
     console.log('in csf');
-    console.log(post);
+    console.log(title);
     const path='pages/cs-fundamentals/post';
     let links = utilityFunctions.getCsfLinks(subject);
     let content='I am good here.How are you?';
     res.render(path,{subject:subject,links:links,content:content});
 });
 
-app.get("/dsa/:topic/:post",function(req,res){
-    const topic = _.kebabCase(req.params.topic);
-    const post = _.kebabCase(req.params.post);
+app.get("/dsa/:topic/:title",function(req,res){
+    const topic = req.params.topic;
+    const title = req.params.title;
     console.log('in dsa');
-    console.log(post);
+    console.log(title);
     const path='pages/dsa/post';
     let links = utilityFunctions.getDsaLinks(topic);
     let content='hope you are fine?';
-    res.render(path,{topic:topic,links:links,content:content});
+    var action = function (err, collection) {
+        collection.find({title:title}).toArray(function(err, results) {
+            if(results.length==0)
+            {
+                res.render(path,{topic:topic,links:links,content:content});
+            }
+            else{
+                content=results[0].content;
+                res.render(path,{topic:topic,links:links,content:content});
+            }
+        });
+        
+    };
+    mongoose.connection.db.collection('posts',action);
 });
 
 app.get("/dsa/:topic",function(req,res){
@@ -76,6 +89,7 @@ app.get("/dsa/:topic",function(req,res){
     //console.log(topic);
     const path='pages/dsa/post';
     let content ='how are you?';
+    
     let links = utilityFunctions.getDsaLinks(topic);
     res.render(path,{topic:topic,links:links,content:content});
 });

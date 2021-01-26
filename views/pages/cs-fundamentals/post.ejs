@@ -32,8 +32,9 @@
                             <a href='#<%=prop%>' data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><%=prop%></a>
                             <ul class="collapse list-unstyled" id='<%=prop%>' >
                                 <%for(var j=0;j<val.length;j++){%>
+                                    <%var postTitle=_.kebabCase(val[j]);%>
                                     <li>
-                                        <a href="/cs-fundamentals/<%=subject%>/<%=val[j]%>"><%=val[j]%></a>
+                                        <a href="/cs-fundamentals/<%=subject%>/<%=postTitle%>"><%=val[j]%></a>
                                     </li>
                                 <%}%>
                             </ul>

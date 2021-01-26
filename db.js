@@ -26,7 +26,7 @@ module.exports.createPostsCollection=function(){
         title:String,
         content:String
     });
-    return mongoose.model("post",postsCollection);
+    return mongoose.model("post",postsCollection,'posts');
 };
 
 
