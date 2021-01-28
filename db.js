@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 module.exports.connection=function(){
     //connect with database
-    mongoose.connect('mongodb://localhost/blogDb',{useNewUrlParser:true},{ useUnifiedTopology: true });
+    mongoose.connect('mongodb://localhost/blogDb',{
+        useNewUrlParser:true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    });
     mongoose.connection.once('open',function(){
         console.log('connection has been made');
     }).on('error',function(error){
@@ -29,5 +34,30 @@ module.exports.createPostsCollection=function(){
     return mongoose.model("post",postsCollection,'posts');
 };
 
-
-
+module.exports.createUserCollection=function(){
+    //connection();
+    const userCollection= mongoose.Schema({
+        email: {
+            type: String,
+            required: true,
+            unique: true
+        },
+        password: {
+            type: String,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        address: {
+            type: String,
+            required: true
+        },
+        mobile_number:{
+            type:Number,
+            required :true
+        }
+    });
+    return mongoose.model("User", userCollection);
+};

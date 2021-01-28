@@ -4,6 +4,13 @@ const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser')
 const session = require('express-session'); 
 
+// const db = require('./config/mongoose');
+const router = express.Router();
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+const MongoStore = require('connect-mongo')(session);
+
+
 const _ = require("lodash");
 const mongoose = require('mongoose');
 const { body,validationResult } = require('express-validator');
@@ -17,7 +24,33 @@ app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser('secret'))
+
+
 app.use(session({cookie: {maxAge: null}}))
+
+// app.use(session({
+//     name: 'CodeBay',
+//     // TODO change the secret before deployment in production mode
+//     secret: 'blahsomething',
+//     saveUninitialized: false,
+//     resave: false,
+//     cookie: {
+//         maxAge: (1000 * 60 * 100)
+//     },
+//     store: new MongoStore(
+//         {
+//             mongooseConnection: db,
+//             autoRemove: 'disabled'
+        
+//         },
+//         function(err){
+//             console.log(err ||  'connect-mongodb setup ok');
+//         }
+//     )
+// }));
+
+
+
 app.locals._=_;
 //flash message middleware
 app.use((req, res, next)=>{
@@ -36,8 +69,15 @@ const Compose = blogDb.createComposeCollection();
 // const Post = blogDb.createPostsCollection();
 
 app.get("/",function(req,res){
+    console.log("Requesting home page")
     res.render("pages/home");
 });
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
+app.use('/', require('./routes'));
 
 app.get("/cs-fundamentals/:subject",function(req,res){
     const subject = _.kebabCase(req.params.subject);
@@ -181,7 +221,6 @@ app.post("/compose",[body('name', 'Invalid name').trim().isLength({ min: 1 }),
 app.get('*', function(req, res) {  
     res.render('pages/error');
 });
-
 
 
 app.listen(3000,function(){
