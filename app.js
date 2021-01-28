@@ -139,8 +139,8 @@ app.post("/compose",[body('name', 'Invalid name').trim().isLength({ min: 1 }),
         // });
         req.session.message = {
             type: 'danger',
-            intro: 'Empty fields! ',
-            message: 'Please insert valid information.'
+            intro: 'Invalid details! ',
+            message: 'title,name,email must not be empty and content must have > 50 characters'
           }
         res.redirect('compose');
         // console.log(errorArray.length);
