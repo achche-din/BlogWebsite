@@ -112,7 +112,7 @@ app.get("/dsa/:topic/:title",function(req,res){
         collection.find({title:title}).toArray(function(err, results) {
             if(results.length==0)
             {
-                res.render(path,{topic:topic,links:links,content:content});
+                res.render(path,{topic:topic,title:title,links:links,content:content});
             }
             else{
                 content=results[0].content;

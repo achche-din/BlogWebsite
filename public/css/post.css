@@ -6,7 +6,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
+    
 }
+
 
 p {
     font-family: 'Poppins', sans-serif;
@@ -66,7 +68,13 @@ a:focus {
     color: #fff;
     transition: all 0.3s;
 }
-
+.disqus{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width:100%;
+    background:#ccc;
+}
 #sidebar.active {
     margin-left: -250px;
 }
@@ -142,7 +150,7 @@ ul.CTAs a {
 #content {
     width: calc(100% - 250px);
     padding: 40px;
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     transition: all 0.3s;
     position: absolute;
     top: 0;
@@ -152,6 +160,7 @@ ul.CTAs a {
 #content.active {
     width: 100%;
 }
+
 
 /* ---------------------------------------------------
     MEDIAQUERIES
