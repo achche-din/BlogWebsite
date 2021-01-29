@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><%=topic%></title>
+    <title><%=title%></title>
     <link rel="icon" href="/images/icon.png">
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -18,15 +18,17 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 <body>
+    <%let parentTopic="";%>
     <div class="wrapper">
         <!-- Sidebar  -->
         <%if(links!=null){%>
             <%let entries=Object.entries(links)%>
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3><%=topic%></h3>
+                    <h3><%=subject%></h3>
                 </div>
                 <ul class="list-unstyled components">
+                    
                     <%for(const [prop, val] of entries) {%>
                         <!-- <p><%=prop%></p> -->
                         <li class="active">
@@ -34,8 +36,11 @@
                             <ul class="collapse list-unstyled" id='<%=prop%>' >
                                 <%for(var j=0;j<val.length;j++){%>
                                     <li>
-                                        <%var postTitle=_.kebabCase(val[j]);%>
-                                        <a href="/dsa/<%=topic%>/<%=postTitle%>"><%=val[j]%></a>
+                                        <%let postTitle=_.kebabCase(val[j]);%>
+                                        <%if(postTitle===title){%>
+                                            <%parentTopic=prop;%>
+                                            <%}%>
+                                        <a href="/dsa/<%=subject%>/<%=postTitle%>"><%=val[j]%></a>
                                     </li>
                                 <%}%>
                             </ul>
@@ -74,21 +79,7 @@
             <!-- start content of the post -->
             <%-content%>
             <!--  end content of the post-->
-            <div id="disqus_thread" class="disqus"></div>
-            <script>
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = title; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-        
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://codebay-1.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <%- include('../../partials/commentBox') %>
         </div>
     </div>
 

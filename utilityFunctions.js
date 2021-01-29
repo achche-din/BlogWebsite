@@ -1,6 +1,6 @@
-module.exports.getDsaLinks=function(topic){
+module.exports.getDsaLinks=function(subject){
     var links=null;
-    if(topic==='data-structures')
+    if(subject==='data-structures')
     {
         links={
             Arrays:['what are Arrays?','features of array'],
@@ -10,7 +10,7 @@ module.exports.getDsaLinks=function(topic){
             Graphs:['what are Graphs?','Graph representation','Types of graphs']
         };
     }
-    else if(topic==='algorithms')
+    else if(subject==='algorithms')
     {
         links={
             Searching:['Linear search','Binary Search','Ternary Search'],
@@ -30,10 +30,10 @@ module.exports.getCsfLinks=function(subject){
     if(subject==='object-oriented-programming')
     {
         links={
-            Encapsulation:['what is encapsulation?','why encapsulation?','When and How to apply?'],
-            Inheritance:['what is Inheritance?','why Inheritance?','When and How to apply?'],
-            Polymorphism:['what is polymorphism?','why polymorphism?','When and How to apply?'],
-            Abstraction:['what is Abstraction?','why Abstraction?','When and How to apply?']
+            Encapsulation:['what is encapsulation?','why encapsulation?','When and How to apply Encapsulation?'],
+            Inheritance:['what is Inheritance?','why Inheritance?','When and How to apply Inheritance?'],
+            Polymorphism:['what is polymorphism?','why polymorphism?','When and How to apply polymorphism?'],
+            Abstraction:['what is Abstraction?','why Abstraction?','When and How to apply polymorphism?']
         };
     }
     else if(subject==='database-management')
@@ -47,11 +47,11 @@ module.exports.getCsfLinks=function(subject){
     else if(subject==='computer-networks')
     {
         links={
-            ApplicationLayer:['Applications','DNS','DHCP'],
-            TransportLayer:['Applications','TCP','UDP'],
-            NetworkLayer:['Applications','IP','DV algorithm','OSPF algorithm'],
-            DataLinkLayer:['Applications','Flow control','Error Control','MAC'],
-            PhysicalLayer:['Applications','Types of Media','Media comparision']
+            ApplicationLayer:['Role of Application layer','DNS','DHCP'],
+            TransportLayer:['Role of Transport layer','TCP','UDP'],
+            NetworkLayer:['Role of Network layer','IP','DV algorithm','OSPF algorithm'],
+            DataLinkLayer:['Role of Data link layer','Flow control','Error Control','MAC'],
+            PhysicalLayer:['Role of Physical layer','Types of Media','Media comparision']
         };
     }
     else if(subject==='operating-system')

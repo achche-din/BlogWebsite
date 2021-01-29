@@ -86,7 +86,7 @@ app.get("/cs-fundamentals/:subject",function(req,res){
     let links=utilityFunctions.getCsfLinks(subject);
     // links=JSON.stringify(links);
     let content ='hey there';
-    res.render(path,{subject:subject,links:links,content:content});
+    res.render(path,{subject:subject,title:subject,links:links,content:content});
 });
 
 app.get("/cs-fundamentals/:subject/:title",function(req,res){
@@ -97,26 +97,26 @@ app.get("/cs-fundamentals/:subject/:title",function(req,res){
     const path='pages/cs-fundamentals/post';
     let links = utilityFunctions.getCsfLinks(subject);
     let content='I am good here.How are you?';
-    res.render(path,{subject:subject,links:links,content:content});
+    res.render(path,{subject:subject,title:title,links:links,content:content});
 });
 
-app.get("/dsa/:topic/:title",function(req,res){
-    const topic = req.params.topic;
+app.get("/dsa/:subject/:title",function(req,res){
+    const subject = req.params.subject;
     const title = req.params.title;
     console.log('in dsa');
-    console.log(title);
+    console.log(subject);
     const path='pages/dsa/post';
-    let links = utilityFunctions.getDsaLinks(topic);
+    let links = utilityFunctions.getDsaLinks(subject);
     let content='hope you are fine?';
     var action = function (err, collection) {
         collection.find({title:title}).toArray(function(err, results) {
             if(results.length==0)
             {
-                res.render(path,{topic:topic,title:title,links:links,content:content});
+                res.render(path,{subject:subject,title:title,links:links,content:content});
             }
             else{
                 content=results[0].content;
-                res.render(path,{topic:topic,links:links,content:content});
+                res.render(path,{subject:subject,title:title,links:links,content:content});
             }
         });
         
@@ -124,14 +124,14 @@ app.get("/dsa/:topic/:title",function(req,res){
     mongoose.connection.db.collection('posts',action);
 });
 
-app.get("/dsa/:topic",function(req,res){
-    const topic = _.kebabCase(req.params.topic);
-    //console.log(topic);
+app.get("/dsa/:subject",function(req,res){
+    const subject = _.kebabCase(req.params.subject);
+    //console.log(subject);
     const path='pages/dsa/post';
     let content ='how are you?';
     
-    let links = utilityFunctions.getDsaLinks(topic);
-    res.render(path,{topic:topic,links:links,content:content});
+    let links = utilityFunctions.getDsaLinks(subject);
+    res.render(path,{subject:subject,title:subject,links:links,content:content});
 });
 
 
