@@ -83,10 +83,12 @@ app.get("/cs-fundamentals/:subject",function(req,res){
     const subject = _.kebabCase(req.params.subject);
     const path='pages/cs-fundamentals/post';
     //res.send();
-    let links=utilityFunctions.getCsfLinks(subject);
+    // let links=utilityFunctions.getCsfLinks(subject);
     // links=JSON.stringify(links);
-    let content ='hey there';
-    res.render(path,{subject:subject,title:subject,links:links,content:content});
+    // let content ='hey there';
+    let title=subject;//keep a default page to display
+    utilityFunctions.renderPost(res,path,subject,title);
+    // res.render(path,{subject:subject,title:subject,links:links,content:content});
 });
 
 app.get("/cs-fundamentals/:subject/:title",function(req,res){
@@ -95,9 +97,10 @@ app.get("/cs-fundamentals/:subject/:title",function(req,res){
     console.log('in csf');
     console.log(title);
     const path='pages/cs-fundamentals/post';
-    let links = utilityFunctions.getCsfLinks(subject);
-    let content='I am good here.How are you?';
-    res.render(path,{subject:subject,title:title,links:links,content:content});
+    // let links = utilityFunctions.getCsfLinks(subject);
+    // let content='I am good here.How are you?';
+    // res.render(path,{subject:subject,title:title,links:links,content:content});
+    utilityFunctions.renderPost(res,path,subject,title);
 });
 
 app.get("/dsa/:subject/:title",function(req,res){
@@ -106,32 +109,19 @@ app.get("/dsa/:subject/:title",function(req,res){
     console.log('in dsa');
     console.log(subject);
     const path='pages/dsa/post';
-    let links = utilityFunctions.getDsaLinks(subject);
-    let content='hope you are fine?';
-    var action = function (err, collection) {
-        collection.find({title:title}).toArray(function(err, results) {
-            if(results.length==0)
-            {
-                res.render(path,{subject:subject,title:title,links:links,content:content});
-            }
-            else{
-                content=results[0].content;
-                res.render(path,{subject:subject,title:title,links:links,content:content});
-            }
-        });
-        
-    };
-    mongoose.connection.db.collection('posts',action);
+    // let links = utilityFunctions.getDsaLinks(subject);
+    utilityFunctions.renderPost(res,path,subject,title);
 });
 
 app.get("/dsa/:subject",function(req,res){
     const subject = _.kebabCase(req.params.subject);
     //console.log(subject);
     const path='pages/dsa/post';
-    let content ='how are you?';
-    
-    let links = utilityFunctions.getDsaLinks(subject);
-    res.render(path,{subject:subject,title:subject,links:links,content:content});
+    let title=subject;//default post to display
+    utilityFunctions.renderPost(res,path,subject,title);
+    // let content ='how are you?';
+    // let links = utilityFunctions.getDsaLinks(subject);
+    // res.render(path,{subject:subject,title:subject,links:links,content:content});
 });
 
 
