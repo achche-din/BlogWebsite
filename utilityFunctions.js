@@ -8,9 +8,9 @@ module.exports.getLinks=function(subject){
     {
         links={
             Encapsulation:['understand Encapsulation'],
-            Inheritance:['what is Inheritance?','why Inheritance?','When and How to apply Inheritance?'],
+            Inheritance:['understand Inheritance'],
             Polymorphism:['understand Polymorphism?'],
-            Abstraction:['what is Abstraction?','why Abstraction?','When and How to apply polymorphism?']
+            Abstraction:['understand Abstraction?']
         };
     }
     else if(subject==='database-management')
