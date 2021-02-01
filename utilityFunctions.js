@@ -7,16 +7,17 @@ module.exports.getLinks=function(subject){
     if(subject==='object-oriented-programming')
     {
         links={
+            OOP:['Introduction to OOP?'],
             Encapsulation:['understand Encapsulation'],
             Inheritance:['understand Inheritance','Types of Inheritance','Challenge Questions'],
             Polymorphism:['understand Polymorphism?'],
             Abstraction:['understand Abstraction?']
         };
     }
-    else if(subject==='database-management')
+    else if(subject==='database-management-system')
     {
         links={
-            Databases:['What are Databases?','Why databases?','MySQL','Mongodb'],
+            Databases:['Introduction to database','ACID properties','RDBMS'],
             SQL:['what is SQL?','Why SQL?','SQL query Structure','SQL Joins','SQL Views','SQL Indexes'],
             Design:['what is Normalisation?','Why Normalisation','1NF','2NF','3NF','BCNF'],
         };

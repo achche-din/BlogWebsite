@@ -1,144 +1,167 @@
 <h1 style="text-align: center">
-  <span style="color: #993366"><strong>What is Inheritance?</strong></span>
+  <strong><span style="color: #993366">What is Database?</span></strong>
 </h1>
 <p>
-  Inheritance is the concept of using the functionality offered by another class
-  and building on top of it. This way, multiple new classes can build upon one
-  class which is offering the base functionality.
+  A database is an organized collection of structured information, or data,
+  typically stored electronically in a computer system. Data stored in a
+  database can then be easily accessed, managed, modified, updated, controlled,
+  and organized using a &ldquo;database management system&rdquo;.
 </p>
+<h1 style="text-align: center">&nbsp;</h1>
 <h1 style="text-align: center">
   <span style="color: #993366"
-    ><strong>What actually happens at Inheritance?</strong></span
+    ><strong>What is Database Management System?</strong></span
   >
 </h1>
 <p>
-  <img
-    src="/images/postImages/oops/insideInheritance.png"
-    alt="what happens at Inheritance"
-  />
+  A database typically requires a comprehensive database software program known
+  as a database management system (DBMS). A DBMS serves as an interface between
+  the database and its end-users or programs, allowing users to retrieve,
+  update, and manage how the information is organized and optimized. Some
+  examples of popular database software or DBMSs include MySQL, Microsoft
+  Access, Microsoft SQL Server, MongoDB.
 </p>
-<p>
-  Only members of a class that are declared protected or public are inherited by
-  subclasses.
-</p>
-<p>
-  Method bodies aren't copied in the body of a subclass. Instead, when you call
-</p>
-<pre><code> Child child1 = new Child(); child1.method1(); </code></pre>
-<p>
-  It will look through its hierarchy, going up a level every time it can't find
-  an implementation. First, it will check Child which has no implementation. One
-  level above that there's Parent which does, so it will use that one. this is
-  achieved via the super() call. The super keyword is used to refer to the
-  object of the immediate parent class. The very first thing super does is
-  initialize an object of parent class in constructor of the child class as
-  shown in code below.
-</p>
-<pre><code> Child() { super(); parent_method(); } </code></pre>
+<h1 style="text-align: center">&nbsp;</h1>
 <h1 style="text-align: center">
   <span style="color: #993366"
-    ><strong>When to apply Inheritance?</strong></span
+    ><strong>Features of Database Management System</strong></span
   >
 </h1>
+<p>&nbsp;</p>
+<ul>
+  <li>
+    <p>Data storage, retrieval and update</p>
+    <ul>
+      <li>
+        <p>
+          All information in a digital repository is organized into a clear
+          hierarchical structure with records, tables or objects. Every piece of
+          information that you can add to your database will be organized in a
+          kind of catalogue, so it will be easier for you to search and update
+          your records later on.
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Support for transactions and concurrency</p>
+    <ul>
+      <li>
+        <p>
+          Transaction is a collection of operations on the database that are
+          bound together into a single run-time unit. The&nbsp;<span
+            class="topic-highlight"
+            >transaction manager</span
+          >
+          controls and coordinates the execution of transactions within the
+          database.&nbsp;
+        </p>
+      </li>
+      <li>
+        <p>
+          When multiple users are accessing the database at the same time, and
+          at least one is updating data, there may be the case of interference,
+          which can result in data inconsistencies. Concurrency Manager in DBMS
+          facilitates multiple users to access shared data in parallel without
+          data inconsistencies.
+        </p>
+      </li>
+    </ul>
+  </li>
+</ul>
 <ul>
   <li>
     <p>
-      Both classes are in the same logical domain and The subclass is a proper
-      subtype of the superclass. Example: Sparrow IS-A Bird, Cat IS-A Animal.
+      Enforcing constraints to ensure data in the database abides by certain
+      rules
     </p>
+    <ul>
+      <li>
+        <p>
+          You can enforce rules by defining integrity constraints more reliably
+          than by adding logic to your application. There are check constraints, cascades, triggers in DBMS 
+          which help to keep database consistent.
+        </p>
+      </li>
+    </ul>
   </li>
   <li>
-    <p>
-      The superclass&rsquo;s implementation is necessary or appropriate for the
-      subclass
-    </p>
-  </li>
-  <li style="font-weight: 400" aria-level="1">
-    <p>The enhancements made by the subclass are primarily additive.</p>
-  </li>
-  <li>
-    <p>
-      If you find that your subclass is removing things provided by the
-      superclass, question inheriting from that superclass
-    </p>
+    <p>Access support from remote locations</p>
+    <ul>
+      <li>
+        <p>
+          Remote database access (RDA) is a protocol standard for database
+          access it includes features for communicating database operations and
+          parameters from the client to the server, in return transporting
+          result data from the server to the client.
+        </p>
+      </li>
+    </ul>
   </li>
 </ul>
+<p>&nbsp;</p>
 <h1 style="text-align: center">
   <span style="color: #993366"
-    ><strong>Advantages of using Inheritance</strong></span
+    ><strong>Challenges to Database Management</strong></span
   >
 </h1>
+<p>&nbsp;</p>
 <ul>
   <li>
     <p>
-      Provide feature of Method overriding which helps in runtime polymorphism.
+      <span style="color: #000000"
+        ><span style="font-weight: 400"
+          >Absorbing significant increases in data volume.</span
+        ></span
+      >
     </p>
+    <ul>
+      <li>
+        <p>
+          The explosion of data coming in from sensors, connected machines, and
+          dozens of other source makes it challenging to organize data
+          efficiently.
+        </p>
+      </li>
+    </ul>
   </li>
   <li>
-    <p>
-      Code reusability: common code for all the derived classes of the parent
-      class can be put in parent class so same code need not be put in multiple
-      child classes hence reducing code redundancy.
-    </p>
+    <p>Ensuring data security</p>
+    <ul>
+      <li>
+        <p>
+          Data breaches are happening everywhere these days, and hackers are
+          getting more inventive. It&rsquo;s more important than ever to ensure
+          that data is secure but also easily accessible to users.
+        </p>
+      </li>
+    </ul>
   </li>
   <li>
-    <p>
-      Inheritance helps to extend features of the base class without affecting
-      base class &ldquo;We need a widget that is just like the existing Widget
-      class but with a few tweaks and enhancements&rdquo;
-    </p>
-  </li>
-  <li>
-    <p>
-      Inheritance helps programmer to model IS-A relationship in code which
-      makes code easier to maintain(read, update, debug).
-    </p>
+    <p>Managing and maintaining the database and infrastructure.</p>
+    <ul>
+      <li>
+        <p>
+          Database administrators must continually watch the database for
+          problems and perform preventative maintenance, as well as apply
+          software upgrades and patches.&nbsp;
+        </p>
+      </li>
+    </ul>
   </li>
 </ul>
+<h1 style="text-align: center">&nbsp;</h1>
 <h1 style="text-align: center">
-  <span style="color: #993366"><strong>Drawbacks of Inheritance</strong></span>
+  <span style="color: #993366"><strong>Challenges Question</strong></span>
 </h1>
-<ul>
-  <li>
-    <p>
-      Main disadvantage of using inheritance is that the two classes (base and
-      inherited class) get tightly coupled. This means one cannot be used
-      independently of each other. for example, during maintenance adding new
-      features both base as well as derived classes are required to be changed.
-      If a method signature is changed or a method is deleted in the
-      "superclass", then we will have to re-factor in case of using that method
-      in derived classes.
-    </p>
-  </li>
-  <li>
-    <p>
-      increased time/effort it takes the program to jump through all the levels
-      of overloaded classes. If a given class has ten levels of abstraction
-      above it, then it will essentially take ten jumps to run through a
-      function defined in each of those classes.
-    </p>
-  </li>
-</ul>
-<h1 style="text-align: center">
-  <span style="color: #993366"
-    ><strong>Real-Life Example of Inheritance</strong></span
-  >
-</h1>
-<ul>
-  <li>
-    <p>
-      suppose we have a Clock and we want to add a feature to set Alarm in it.
-      Look at code below to see two possible design approach to solve this
-      problem.
-      <script src="https://gist.github.com/PUSHPENDRAKUMAR18270/33640daa37579ed1c93203f5b84a8d57.js"></script>
-    </p>
-  </li>
-  <li>
-    <p>
-      Which design do you think is better? Design with Inheritance removes
-      redundant code as AlarmClock do not have to define its own method
-      setTime() and getTime() it can inherit from Clock. Also, AlarmClock IS-A
-      Clock. Code is a lot cleaner when this relationship is maintained.
-    </p>
-  </li>
-</ul>
+<p>&nbsp;</p>
+<h4><strong>why use Databases instead of a spreadsheet?</strong></h4>
+<p>
+  Spreadsheets were originally designed for one user. They&rsquo;re great for a
+  single user or a small number of users who don&rsquo;t need to do a lot of
+  incredibly complicated data manipulation. Databases, on the other hand, are
+  designed to hold much larger collections of organized
+  information&mdash;massive amounts, sometimes. Databases allow multiple users
+  at the same time to quickly and securely access and query the data using
+  highly complex logic and language.
+</p>

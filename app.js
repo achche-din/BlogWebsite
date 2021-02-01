@@ -87,6 +87,14 @@ app.get("/cs-fundamentals/:subject",function(req,res){
     // links=JSON.stringify(links);
     // let content ='hey there';
     let title=subject;//keep a default page to display
+    if(subject=='object-oriented-programming')
+    {
+        title='introduction-to-oop';
+    }
+    else if(subject=='database-management-system')
+    {
+        title='introduction-to-database';
+    }
     utilityFunctions.renderPost(res,path,subject,title);
     // res.render(path,{subject:subject,title:subject,links:links,content:content});
 });
