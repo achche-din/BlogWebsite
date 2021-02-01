@@ -18,8 +18,8 @@ module.exports.getLinks=function(subject){
     {
         links={
             Databases:['Introduction to database','ACID properties','RDBMS'],
-            SQL:['what is SQL?','Why SQL?','SQL query Structure','SQL Joins','SQL Views','SQL Indexes'],
-            Design:['what is Normalisation?','Why Normalisation','1NF','2NF','3NF','BCNF'],
+            SQL:['Introduction to SQL','SQL Joins','SQL Views','SQL Indexes'],
+            Design:['Introduction to Normalisation','Normal Forms'],
         };
     }
     else if(subject==='computer-networks')
