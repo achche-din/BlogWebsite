@@ -8,7 +8,7 @@ module.exports.getLinks=function(subject){
     {
         links={
             Encapsulation:['understand Encapsulation'],
-            Inheritance:['understand Inheritance'],
+            Inheritance:['understand Inheritance','Types of Inheritance','Challenge Questions'],
             Polymorphism:['understand Polymorphism?'],
             Abstraction:['understand Abstraction?']
         };
