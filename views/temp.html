@@ -7,11 +7,8 @@
   database can then be easily accessed, managed, modified, updated, controlled,
   and organized using a &ldquo;database management system&rdquo;.
 </p>
-<h1 style="text-align: center">&nbsp;</h1>
 <h1 style="text-align: center">
-  <span style="color: #993366"
-    ><strong>What is Database Management System?</strong></span
-  >
+  <strong><span style="color: #993366">What is Database?</span></strong>
 </h1>
 <p>
   A database typically requires a comprehensive database software program known
@@ -79,8 +76,8 @@
       <li>
         <p>
           You can enforce rules by defining integrity constraints more reliably
-          than by adding logic to your application. There are check constraints, cascades, triggers in DBMS 
-          which help to keep database consistent.
+          than by adding logic to your application. There are check constraints,
+          cascades, triggers in DBMS which help to keep database consistent.
         </p>
       </li>
     </ul>
@@ -165,3 +162,210 @@
   at the same time to quickly and securely access and query the data using
   highly complex logic and language.
 </p>
+
+CREATE TABLE Customer( CustomerId int, OrderId int PRIMARY
+KEY(CustomerId,OrderId), FOREIGN KEY (OrderId) REFERENCES Order(OrderId), ON
+DELETE [reference_option] ); * can use [ON UPDATE reference_option] to apply
+update constraint CREATE Table Order( OrderId int, OrderName string, OrderAmount
+double, PRIMARY KEY(OrderId) );
+<h1 style="text-align: center">
+  <strong><span style="color: #993366">What is OOP?</span></strong>
+</h1>
+<p>
+  OOPs stands for 'Object Oriented Programming'. It is a programming paradigm
+  based on the concept of objects. Real-world entities can be modelled using
+  objects which describes its attributes(fields) and behaviour(code which
+  manipulates the attributes). In OOP, computer programs are designed by making
+  them out of objects that interact with one another.
+</p>
+<h1 style="text-align: center">
+  <strong><span style="color: #993366">Why OOP?</span></strong>
+</h1>
+<ul>
+  <li>
+    <p>Modularity in Code for easier troubleshooting</p>
+    <ul>
+      <li>
+        <p>
+          Something has gone wrong, and you have no idea where to look. With OOP
+          you know exactly where to look. If an object functionality is broken
+          you just have to look at its class and fix that functionality.
+            <a
+              href="understand-encapsulation"
+              target="_blank"
+              rel="noopener"
+              >Encapsulation</a
+            
+          >
+          provides modularity in code.
+        </p>
+      </li>
+      <li>
+        <p>
+          Team members can work on multiple objects simultaneously while
+          minimising the chance
+          <span style="font-weight: 400"
+            >that one person might duplicate someone else&rsquo;s
+            functionality</span
+          >
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+      Code reuse using
+      <a href="understand-inheritance"
+      target="_blank"
+        rel="noopener"
+        >Inheritance</a
+      >
+    </p>
+    <ul>
+      <li>
+        <p>
+          In programming, there is a principle of DRY(do not repeat yourself).
+          Code repetition is not good since if you want to change that code you
+          need to change at multiple locations where that code is repeated
+          making the code harder to maintain.
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Code flexibility</p>
+    <ul>
+      <li>
+        <p>
+          <a
+            href="understand-polymorphism"
+            target="_blank"
+            rel="noopener"
+            >Polymorphism</a
+          >
+          provides different functionality from a method based on the situation
+          through method overriding and method overloading. The same method can
+          have different behaviour. suppose we have a method driveCar()
+          sometimes when this method is invoked driveCar() is driving Mercedes
+          and other time it could be BMW based on whether the car is BMW or
+          Mercedes. You can read about it more
+          <a
+            href="understand-polymorphism"
+            target="_blank"
+            rel="noopener"
+            >here</a
+          >.
+        </p>
+      </li>
+      <li>
+        <p>
+          We can hide the implementation details of a method using the concept
+          of
+          <a href="understand-abstraction"
+            >Abstraction</a
+          >. Implementators of the class can change implementation and no user
+          of the class is affected as long as method signature remains the same.
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+      Object-oriented programming is often the most natural and pragmatic
+      approach, once you get the hang of it. OOP languages allow you to break
+      down your software into bite-sized problems that you then can solve
+      &mdash; one object at a time
+    </p>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<h1 style=\ "text-align: center\"> <strong><span style=\"color: #993366\">What is Database?</span></strong></h1>
+<p>A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Data stored in a database can then be easily accessed, managed, modified, updated, controlled, and organized using a &ldquo;database management system&rdquo;.</p>
+<h1 style=\ "text-align: center\">&nbsp;</h1>
+<h1 style=\ "text-align: center\"> <span style=\"color: #993366\" ><strong>What is Database Management System?</strong></span ></h1>
+<p>A database typically requires a comprehensive database software program known as a database management system (DBMS). A DBMS serves as an interface between the database and its end-users or programs, allowing users to retrieve, update, and manage how the information is organized and optimized. Some examples of popular database software or DBMSs include MySQL, Microsoft Access, Microsoft SQL Server, MongoDB.</p>
+<h1 style=\ "text-align: center\">&nbsp;</h1>
+<h1 style=\ "text-align: center\"> <span style=\"color: #993366\" ><strong>Features of Database Management System</strong></span ></h1>
+<p>&nbsp;</p>
+<ul>
+	<li>
+		<p>Data storage, retrieval and update</p>
+		<ul>
+			<li>
+				<p>All information in a digital repository is organized into a clear hierarchical structure with records, tables or objects. Every piece of information that you can add to your database will be organized in a kind of catalogue, so it will be easier for you to search and update your records later on.</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>Support for transactions and concurrency</p>
+		<ul>
+			<li>
+				<p>Transaction is a collection of operations on the database that are bound together into a single run-time unit. The&nbsp;<span class=\ "topic-highlight\">transaction manager</span > controls and coordinates the execution of transactions within the database.&nbsp; </p>
+         </li>
+         <li>
+            <p> When multiple users are accessing the database at the same time, and at least one is updating data, there may be the case of interference, which can result in data inconsistencies. Concurrency Manager in DBMS facilitates multiple users to access shared data in parallel without data inconsistencies. </p>
+         </li>
+      </ul>
+   </li>
+</ul>
+<ul>
+   <li>
+      <p> Enforcing constraints to ensure data in the database abides by certain rules </p>
+      <ul>
+         <li>
+            <p> You can enforce rules by defining integrity constraints more reliably than by adding logic to your application. There are check constraints, cascades, triggers in DBMS which help to keep database consistent. </p>
+         </li>
+      </ul>
+   </li>
+   <li>
+      <p>Access support from remote locations</p>
+      <ul>
+         <li>
+            <p> Remote database access (RDA) is a protocol standard for database access it includes features for communicating database operations and parameters from the client to the server, in return transporting result data from the server to the client. </p>
+         </li>
+      </ul>
+   </li>
+</ul>
+<p>&nbsp;</p>
+<h1 style=\"text-align: center\"> <span style=\"color: #993366\" ><strong>Challenges to Database Management</strong></span ></h1>
+<p>&nbsp;</p>
+<ul>
+   <li>
+      <p> <span style=\"color: #000000\" ><span style=\"font-weight: 400\" >Absorbing significant increases in data volume.</span ></span > </p>
+      <ul>
+         <li>
+            <p> The explosion of data coming in from sensors, connected machines, and dozens of other source makes it challenging to organize data efficiently. </p>
+         </li>
+      </ul>
+   </li>
+   <li>
+      <p>Ensuring data security</p>
+      <ul>
+         <li>
+            <p> Data breaches are happening everywhere these days, and hackers are getting more inventive. It&rsquo;s more important than ever to ensure that data is secure but also easily accessible to users. </p>
+         </li>
+      </ul>
+   </li>
+   <li>
+      <p>Managing and maintaining the database and infrastructure.</p>
+      <ul>
+         <li>
+            <p> Database administrators must continually watch the database for problems and perform preventative maintenance, as well as apply software upgrades and patches.&nbsp; </p>
+         </li>
+      </ul>
+   </li>
+</ul>
+<h1 style=\"text-align: center\">&nbsp;</h1>
+<h1 style=\"text-align: center\"> <span style="color: #993366"><strong>Challenges Question</strong></span>
+					</h1>
+					<p>&nbsp;</p>
+					<h4><strong>why use Databases instead of a spreadsheet?</strong></h4>
+					<p>Spreadsheets were originally designed for one user. They&rsquo;re great for a single user or a small number of users who don&rsquo;t need to do a lot of incredibly complicated data manipulation. Databases, on the other hand, are designed to hold much larger collections of organized information&mdash;massive amounts, sometimes. Databases allow multiple users at the same time to quickly and securely access and query the data using highly complex logic and language.</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>

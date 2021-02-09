@@ -7,7 +7,6 @@ module.exports.getLinks=function(subject){
     if(subject==='object-oriented-programming')
     {
         links={
-            OOP:['Introduction to OOP?'],
             Encapsulation:['understand Encapsulation'],
             Inheritance:['understand Inheritance','Types of Inheritance','Challenge Questions'],
             Polymorphism:['understand Polymorphism?'],
@@ -17,8 +16,8 @@ module.exports.getLinks=function(subject){
     else if(subject==='database-management-system')
     {
         links={
-            Databases:['Introduction to database','ACID properties','RDBMS'],
-            SQL:['Introduction to SQL','SQL Joins','SQL Views','SQL Indexes'],
+            Databases:['Introduction to Database','keys in DBMS','Relationships in Databases','ACID properties'],
+            SQL:['Introduction to SQL','Foreign key constraints','SQL Joins','SQL Views','SQL Indexes'],
             Design:['Introduction to Normalisation','Normal Forms'],
         };
     }

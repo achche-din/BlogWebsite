@@ -23,10 +23,13 @@ app.set('view engine','ejs');
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(cookieParser('secret'))
+app.use(cookieParser('secret'));
 
-
-app.use(session({cookie: {maxAge: null}}))
+app.use(session({
+    secret: 'Utr@1010',
+    resave: true,
+    saveUninitialized: true
+}));
 
 // app.use(session({
 //     name: 'CodeBay',
