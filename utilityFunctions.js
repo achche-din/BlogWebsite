@@ -16,7 +16,7 @@ module.exports.getLinks=function(subject){
     else if(subject==='database-management-system')
     {
         links={
-            Databases:['Introduction to Database','keys in DBMS','Relationships in Databases','ACID properties'],
+            Databases:['keys in DBMS','Relationships in Databases','ACID properties'],
             SQL:['Introduction to SQL','Foreign key constraints','SQL Joins','SQL Views','SQL Indexes'],
             Design:['Introduction to Normalisation','Normal Forms'],
         };
@@ -41,22 +41,25 @@ module.exports.getLinks=function(subject){
     else if(subject==='data-structures')
     {
         links={
-            Arrays:['what are Arrays?','features of array'],
+            Arrays:['Introduction to Arrays'],
             Stack:['All about Stack'],
-            LinkedLists:['what are linkedlists?','features of linkedlists'],
-            Trees:['what are Trees?','Binary trees','Binary Search trees','Heaps'],
-            Graphs:['what are Graphs?','Graph representation','Types of graphs']
+            LinkedLists:['Introduction to linkedlists?'],
+            HashTables:['Introduction to Hash tables'],
+            Trees:['Introduction to Trees','Binary trees','Binary Search trees','Heaps'],
+            Graphs:['Introduction to Graphs']
         };
     }
     else if(subject==='algorithms')
     {
         links={
-            Searching:['Linear search','Binary Search','Ternary Search'],
-            Sorting:['Bubble sort','Insertion sort','Selection sort','Merge sort',
-                        'Quick sort','Counting sort'],
-            Recursion:['What is Recursion?','Visualisation of Recursion','Coin Change Problem'],
-            Greedy:['What are Greedy algorithms?','Job scheduling algoritm','Dijkistra algoritm'],
-            DynamicProgramming:['what is Dynamic programming','Kadane algorithm','Coin change Problem']
+            ComplexityAnalysis:['Introduction to complexity analysis'],
+            Searching:['Binary Search','Ternary Search'],
+            Sorting:['Bubble sort','Insertion sort','Counting Sort','Merge sort',
+                        'Quick sort'],
+            Greedy:['Job scheduling','Meeting Rooms'],
+            Recursion:['0/1 Knapsack Recursive','Coin Change Recursive'],
+            BackTracking:['Introduction to Backtracking','Maze problem','N-Queen problem'],
+            DynamicProgramming:['Introduction to Dynamic programming','Kadane algorithm','Coin change Problem DP']
         };
     }
     return links;

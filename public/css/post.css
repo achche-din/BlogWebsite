@@ -18,15 +18,17 @@ p {
     line-height: 1.7em;
     color:black;
 }
-pre 
+/* pre 
 {
     tab-size: 4;
     white-space: pre-wrap;
     background-color:lightgray;
     display: inline;
     padding: 5px 5px;
-    /* width: min-content; */
-}
+    width: min-content;
+} */
+
+
   
 
 /* pre:hover,
