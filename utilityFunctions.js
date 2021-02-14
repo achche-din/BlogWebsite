@@ -24,11 +24,11 @@ module.exports.getLinks=function(subject){
     else if(subject==='computer-networks')
     {
         links={
-            ApplicationLayer:['Role of Application layer','DNS','DHCP'],
-            TransportLayer:['Role of Transport layer','TCP','UDP'],
-            NetworkLayer:['Role of Network layer','IP','DV algorithm','OSPF algorithm'],
-            DataLinkLayer:['Role of Data link layer','Flow control','Error Control','MAC'],
-            PhysicalLayer:['Role of Physical layer','Types of Media','Media comparision']
+            ApplicationLayer:['Introduction to Application layer','DNS','DHCP'],
+            TransportLayer:['Introduction to Transport layer','TCP','UDP'],
+            NetworkLayer:['Introduction to Network layer','IP','DV algorithm','OSPF algorithm'],
+            DataLinkLayer:['Introduction to Data link layer','Flow control','Error Control','MAC'],
+            PhysicalLayer:['Introduction to Physical layer','Types of Media','Media comparision']
         };
     }
     else if(subject==='operating-system')
@@ -53,13 +53,13 @@ module.exports.getLinks=function(subject){
     {
         links={
             ComplexityAnalysis:['Introduction to complexity analysis'],
-            Searching:['Binary Search','Ternary Search'],
+            Searching:['Binary Search'],
             Sorting:['Bubble sort','Insertion sort','Counting Sort','Merge sort',
                         'Quick sort'],
-            Greedy:['Job scheduling','Meeting Rooms'],
-            Recursion:['0/1 Knapsack Recursive','Coin Change Recursive'],
+            Greedy:['Introduction to Greedy','Job scheduling','Meeting Rooms'],
+            Recursion:['Introduction to Recursion','Tower of Hanoi','Coin Change Recursive'],
             BackTracking:['Introduction to Backtracking','Maze problem','N-Queen problem'],
-            DynamicProgramming:['Introduction to Dynamic programming','Kadane algorithm','Coin change Problem DP']
+            DynamicProgramming:['Introduction to Dynamic programming','Rod Cutting','0/1 Knapsack Problem']
         };
     }
     return links;

@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 module.exports.connection=function(){
     //connect with database
-    mongoose.connect('mongodb://localhost/blogDb',{
+    mongoose.connect('mongodb+srv://pkc3766:Utr@1010@cluster0.7n9fq.mongodb.net/blogDB?retryWrites=true&w=majority',{
         useNewUrlParser:true,
         useUnifiedTopology: true,
         useCreateIndex: true,
         useFindAndModify: false
     });
     mongoose.connection.once('open',function(){
-        console.log('connection has been made');
+        console.log('Database connection has been made');
     }).on('error',function(error){
         console.log('error is'+error);
     });
