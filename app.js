@@ -129,6 +129,10 @@ app.get("/dsa/:subject",function(req,res){
     //console.log(subject);
     const path='pages/dsa/post';
     let title=subject;//default post to display
+    if(subject=='algorithms')
+    {
+        title='introduction-to-algorithms';
+    }
     utilityFunctions.renderPost(res,path,subject,title);
     // let content ='how are you?';
     // let links = utilityFunctions.getDsaLinks(subject);
