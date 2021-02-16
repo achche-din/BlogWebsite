@@ -133,6 +133,10 @@ app.get("/dsa/:subject",function(req,res){
     {
         title='introduction-to-algorithms';
     }
+    else if(subject=='data-structures')
+    {
+        title='introduction-to-data-structures';
+    }
     utilityFunctions.renderPost(res,path,subject,title);
     // let content ='how are you?';
     // let links = utilityFunctions.getDsaLinks(subject);
