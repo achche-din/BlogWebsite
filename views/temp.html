@@ -1,472 +1,694 @@
 <h1 style="text-align: center">
-  <strong><span style="color: #993366">What is Database?</span></strong>
-</h1>
-<p>
-  A database is an organized collection of structured information, or data,
-  typically stored electronically in a computer system. Data stored in a
-  database can then be easily accessed, managed, modified, updated, controlled,
-  and organized using a &ldquo;database management system&rdquo;.
-</p>
-<h1 style="text-align: center">
-  <strong><span style="color: #993366">What is Database?</span></strong>
-</h1>
-<p>
-  A database typically requires a comprehensive database software program known
-  as a database management system (DBMS). A DBMS serves as an interface between
-  the database and its end-users or programs, allowing users to retrieve,
-  update, and manage how the information is organized and optimized. Some
-  examples of popular database software or DBMSs include MySQL, Microsoft
-  Access, Microsoft SQL Server, MongoDB.
-</p>
-<h1 style="text-align: center">&nbsp;</h1>
-<h1 style="text-align: center">
-  <span style="color: #993366"
-    ><strong>Features of Database Management System</strong></span
+  <strong
+    ><span style="color: #993366">What is Functional Dependency?</span></strong
   >
 </h1>
 <p>&nbsp;</p>
-<ul>
-  <li>
-    <p>Data storage, retrieval and update</p>
-    <ul>
-      <li>
-        <p>
-          All information in a digital repository is organized into a clear
-          hierarchical structure with records, tables or objects. Every piece of
-          information that you can add to your database will be organized in a
-          kind of catalogue, so it will be easier for you to search and update
-          your records later on.
-        </p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Support for transactions and concurrency</p>
-    <ul>
-      <li>
-        <p>
-          Transaction is a collection of operations on the database that are
-          bound together into a single run-time unit. The&nbsp;<span
-            class="topic-highlight"
-            >transaction manager</span
-          >
-          controls and coordinates the execution of transactions within the
-          database.&nbsp;
-        </p>
-      </li>
-      <li>
-        <p>
-          When multiple users are accessing the database at the same time, and
-          at least one is updating data, there may be the case of interference,
-          which can result in data inconsistencies. Concurrency Manager in DBMS
-          facilitates multiple users to access shared data in parallel without
-          data inconsistencies.
-        </p>
-      </li>
-    </ul>
-  </li>
-</ul>
-<ul>
-  <li>
-    <p>
-      Enforcing constraints to ensure data in the database abides by certain
-      rules
-    </p>
-    <ul>
-      <li>
-        <p>
-          You can enforce rules by defining integrity constraints more reliably
-          than by adding logic to your application. There are check constraints,
-          cascades, triggers in DBMS which help to keep database consistent.
-        </p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Access support from remote locations</p>
-    <ul>
-      <li>
-        <p>
-          Remote database access (RDA) is a protocol standard for database
-          access it includes features for communicating database operations and
-          parameters from the client to the server, in return transporting
-          result data from the server to the client.
-        </p>
-      </li>
-    </ul>
-  </li>
-</ul>
-<p>&nbsp;</p>
-<h1 style="text-align: center">
-  <span style="color: #993366"
-    ><strong>Challenges to Database Management</strong></span
+<p>
+  In relational database theory, a functional dependency is a constraint between
+  two sets of attributes in a relation from a database. Given a relation R, a
+  set of attributes X in R is said to functionally determine another set of
+  attributes Y, also in R, (written X &rarr; Y) if, and only if, each X value in
+  R is associated with precisely one Y value in R; R is then said to satisfy the
+  functional dependency X &rarr; Y. lets look at an example
+</p>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="width: 76.1974%; border-collapse: collapse; height: 72px"
+    border="1"
   >
-</h1>
-<p>&nbsp;</p>
-<ul>
-  <li>
-    <p>
-      <span style="color: #000000"
-        ><span style="font-weight: 400"
-          >Absorbing significant increases in data volume.</span
-        ></span
-      >
-    </p>
-    <ul>
-      <li>
-        <p>
-          The explosion of data coming in from sensors, connected machines, and
-          dozens of other source makes it challenging to organize data
-          efficiently.
-        </p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Ensuring data security</p>
-    <ul>
-      <li>
-        <p>
-          Data breaches are happening everywhere these days, and hackers are
-          getting more inventive. It&rsquo;s more important than ever to ensure
-          that data is secure but also easily accessible to users.
-        </p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Managing and maintaining the database and infrastructure.</p>
-    <ul>
-      <li>
-        <p>
-          Database administrators must continually watch the database for
-          problems and perform preventative maintenance, as well as apply
-          software upgrades and patches.&nbsp;
-        </p>
-      </li>
-    </ul>
-  </li>
-</ul>
-<h1 style="text-align: center">&nbsp;</h1>
-<h1 style="text-align: center">
-  <span style="color: #993366"><strong>Challenges Question</strong></span>
-</h1>
-<p>&nbsp;</p>
-<h4><strong>why use Databases instead of a spreadsheet?</strong></h4>
+    <tbody>
+      <tr style="height: 18px">
+        <td style="width: 15.7112%; height: 18px">
+          <strong>EmployeeID</strong>
+        </td>
+        <td style="width: 18.9042%; height: 18px">
+          <strong>EmployeeName</strong>
+        </td>
+        <td style="width: 18.9042%; height: 18px">
+          <strong>DepartmentID</strong>
+        </td>
+        <td style="width: 22.8229%; height: 18px">
+          <strong>DepartmentName</strong>
+        </td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 15.7112%; height: 18px">1</td>
+        <td style="width: 18.9042%; height: 18px">Ashutosh</td>
+        <td style="width: 18.9042%; height: 18px">1</td>
+        <td style="width: 22.8229%; height: 18px">R&amp;D</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 15.7112%; height: 18px">2</td>
+        <td style="width: 18.9042%; height: 18px">Sachin</td>
+        <td style="width: 18.9042%; height: 18px">2</td>
+        <td style="width: 22.8229%; height: 18px">Software Engineering</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 15.7112%; height: 18px">3</td>
+        <td style="width: 18.9042%; height: 18px">Meghaj</td>
+        <td style="width: 18.9042%; height: 18px">1</td>
+        <td style="width: 22.8229%; height: 18px">R&amp;D</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <p>
-  Spreadsheets were originally designed for one user. They&rsquo;re great for a
-  single user or a small number of users who don&rsquo;t need to do a lot of
-  incredibly complicated data manipulation. Databases, on the other hand, are
-  designed to hold much larger collections of organized
-  information&mdash;massive amounts, sometimes. Databases allow multiple users
-  at the same time to quickly and securely access and query the data using
-  highly complex logic and language.
+  Here we have a functional dependency, Department ID &rarr; DepartmentName what
+  it implies is that suppose we have two DepartmentID deptid1 and deptid2 then
+  if it is the case that deptid1 = deptid2 then it is guaranteed that their
+  corresponding DepartmentName deptname1 and deptname2 should also be same.
+  Other than this we also have other functional dependencies here (Employee ID
+  &rarr; Employee Name, Employee ID &rarr; Department ID)
 </p>
-
-CREATE TABLE Customer( CustomerId int, OrderId int PRIMARY
-KEY(CustomerId,OrderId), FOREIGN KEY (OrderId) REFERENCES Order(OrderId), ON
-DELETE [reference_option] ); * can use [ON UPDATE reference_option] to apply
-update constraint CREATE Table Order( OrderId int, OrderName string, OrderAmount
-double, PRIMARY KEY(OrderId) );
 <h1 style="text-align: center">
-  <strong><span style="color: #993366">What is OOP?</span></strong>
+  <strong><span style="color: #993366">1st Normal Form(1NF)</span></strong>
 </h1>
+<p>&nbsp;</p>
+<ul>
+  <li>
+    <p>
+      Rules for First Normal form. A table must satisfy <strong>all</strong> the
+      rules specified below to be in First Normal Form.
+    </p>
+    <ul>
+      <li>
+        <p>
+          Each column values must be atomic. Columns cannot contain sub-columns
+          in the first normal form. That is, you cannot list multiple cities in
+          one column and separate them with a semi-colon. &ldquo;Chicago&rdquo;
+          is atomic; whereas &ldquo;Chicago; Los Angeles; New York&rdquo; is
+          not.&nbsp;
+        </p>
+      </li>
+      <li>
+        <p>
+          Table should not contain repeating groups of columns. Multiple fields
+          in a single table should not be used to store similar data. For
+          example, column names like Telephoneno1, Telephoneno2, Telephone3 in a
+          table all store similar data but use multiple columns. What if a
+          customer gets a new telephoneno then we have to change schema of the
+          table to add column telephoneno4 to the table. Clearly it is not a
+          good design.
+        </p>
+      </li>
+      <li>
+        <p>Table records must be uniquely identified using a primary key.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="border-collapse: collapse; width: 71.2627%"
+    border="1"
+  >
+    <tbody>
+      <tr>
+        <td style="width: 13.6792%"><strong>CustomerID</strong></td>
+        <td style="width: 15.8564%"><strong>FirstName</strong></td>
+        <td style="width: 18.759%"><strong>SecondName</strong></td>
+        <td style="width: 22.1963%"><strong>TelephoneNos</strong></td>
+      </tr>
+      <tr>
+        <td style="width: 13.6792%">1</td>
+        <td style="width: 15.8564%">Sachin</td>
+        <td style="width: 18.759%">Bisht</td>
+        <td style="width: 22.1963%">8888888;999999;453456</td>
+      </tr>
+      <tr>
+        <td style="width: 13.6792%">2</td>
+        <td style="width: 15.8564%">Meghaj</td>
+        <td style="width: 18.759%">Singh</td>
+        <td style="width: 22.1963%">874567;234512</td>
+      </tr>
+      <tr>
+        <td style="width: 13.6792%">3</td>
+        <td style="width: 15.8564%">Ashutosh</td>
+        <td style="width: 18.759%">Kumar</td>
+        <td style="width: 22.1963%">876543</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <p>
-  OOPs stands for 'Object Oriented Programming'. It is a programming paradigm
-  based on the concept of objects. Real-world entities can be modelled using
-  objects which describes its attributes(fields) and behaviour(code which
-  manipulates the attributes). In OOP, computer programs are designed by making
-  them out of objects that interact with one another.
+  <strong><span style="text-decoration: underline">Table-0</span></strong>
 </p>
+<p>
+  Lets normalise the Table-0 make it to 1st normal form by applying 1NF rules
+</p>
+<p>
+  <strong>Rule 1</strong>: Every column value must be atomic. Here values in
+  column TelephoneNos are not atomic as each column contains multiple telephone
+  nos. To solve this we put each of the multiple values in a separate column in
+  the table as shown in table below.
+</p>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="border-collapse: collapse; width: 89.5501%; height: 72px"
+    border="1"
+  >
+    <tbody>
+      <tr style="height: 18px">
+        <td style="width: 14.3445%; height: 18px">
+          <strong>CustomerID</strong>
+        </td>
+        <td style="width: 13.0382%; height: 18px">
+          <strong>FirstName</strong>
+        </td>
+        <td style="width: 15.9411%; height: 18px">
+          <strong>SecondName</strong>
+        </td>
+        <td style="width: 15.941%; height: 18px">
+          <strong>TelephoneNo1</strong>
+        </td>
+        <td style="width: 14.4896%; height: 18px">
+          <strong>TelephoneNo2</strong>
+        </td>
+        <td style="width: 15.7959%; height: 18px">
+          <strong>TelephoneNo3</strong>
+        </td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 14.3445%; height: 18px">1</td>
+        <td style="width: 13.0382%; height: 18px">Sachin</td>
+        <td style="width: 15.9411%; height: 18px">Bisht</td>
+        <td style="width: 15.941%; height: 18px">888888</td>
+        <td style="width: 14.4896%; height: 18px">999999</td>
+        <td style="width: 15.7959%; height: 18px">453456</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 14.3445%; height: 18px">2</td>
+        <td style="width: 13.0382%; height: 18px">Meghaj</td>
+        <td style="width: 15.9411%; height: 18px">Singh</td>
+        <td style="width: 15.941%; height: 18px">874567</td>
+        <td style="width: 14.4896%; height: 18px">234512</td>
+        <td style="width: 15.7959%; height: 18px">NULL</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 14.3445%; height: 18px">3</td>
+        <td style="width: 13.0382%; height: 18px">Ashutosh</td>
+        <td style="width: 15.9411%; height: 18px">Kumar</td>
+        <td style="width: 15.941%; height: 18px">876543</td>
+        <td style="width: 14.4896%; height: 18px">NULL</td>
+        <td style="width: 15.7959%; height: 18px">NULL</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <strong>Rule 2:&nbsp;</strong>Table should not contain repeating group of
+  columns. Here columns TelephoneNo1 ,TelephoneNo2, TelephoneNo3 all store same
+  information TelephoneNo of the customer but in multiple columns. It is not a
+  good design as if a customer gets a new TelephoneNo then we have to alter the
+  schema of the table. To solve this we divide the table into 2 tables and link
+  one to another using a foreign key.
+</p>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="border-collapse: collapse; width: 61.3474%; height: 126px"
+    border="1"
+  >
+    <tbody>
+      <tr style="height: 18px">
+        <td style="width: 13.4927%; height: 18px">
+          <strong>CustomerID</strong>
+        </td>
+        <td style="width: 14.141%; height: 18px"><strong>FirstName</strong></td>
+        <td style="width: 15.6199%; height: 18px">
+          <strong>SecondName</strong>
+        </td>
+        <td style="width: 14.8371%; height: 18px">
+          <strong>TelephoneNoId</strong>
+        </td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 13.4927%; height: 18px">1</td>
+        <td style="width: 14.141%; height: 18px">Sachin</td>
+        <td style="width: 15.6199%; height: 18px">Bisht</td>
+        <td style="width: 14.8371%; height: 18px">1</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 13.4927%; height: 18px">1</td>
+        <td style="width: 14.141%; height: 18px">Sachin</td>
+        <td style="width: 15.6199%; height: 18px">Bisht</td>
+        <td style="width: 14.8371%; height: 18px">2</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 13.4927%; height: 18px">1</td>
+        <td style="width: 14.141%; height: 18px">Sachin</td>
+        <td style="width: 15.6199%; height: 18px">Bisht</td>
+        <td style="width: 14.8371%; height: 18px">3</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 13.4927%; height: 18px">2</td>
+        <td style="width: 14.141%; height: 18px">Meghaj</td>
+        <td style="width: 15.6199%; height: 18px">Singh</td>
+        <td style="width: 14.8371%; height: 18px">4</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 13.4927%; height: 18px">2</td>
+        <td style="width: 14.141%; height: 18px">Meghaj</td>
+        <td style="width: 15.6199%; height: 18px">Singh</td>
+        <td style="width: 14.8371%; height: 18px">5</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 13.4927%; height: 18px">3</td>
+        <td style="width: 14.141%; height: 18px">Ashutosh</td>
+        <td style="width: 15.6199%; height: 18px">Kumar</td>
+        <td style="width: 14.8371%; height: 18px">6</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p style="text-align: left">
+  <span style="text-decoration: underline"><strong>Table-1</strong></span>
+</p>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="border-collapse: collapse; width: 31.9304%; height: 146px"
+    border="1"
+  >
+    <tbody>
+      <tr style="height: 18px">
+        <td style="width: 21.2025%; height: 18px">
+          <strong>TelephoneNoId</strong>
+        </td>
+        <td style="width: 16.6326%; height: 18px">
+          <strong>TelephoneNo</strong>
+        </td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 21.2025%; height: 18px">1</td>
+        <td style="width: 16.6326%; height: 18px">888888</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 21.2025%; height: 18px">2</td>
+        <td style="width: 16.6326%; height: 18px">999999</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 21.2025%; height: 18px">3</td>
+        <td style="width: 16.6326%; height: 18px">453456</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 21.2025%; height: 18px">4</td>
+        <td style="width: 16.6326%; height: 18px">874567</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 21.2025%; height: 18px">5</td>
+        <td style="width: 16.6326%; height: 18px">234512</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 21.2025%; height: 18px">6</td>
+        <td style="width: 16.6326%; height: 18px">876543</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <span style="text-decoration: underline"><strong>Table-2</strong></span>
+</p>
+<p>
+  Here <strong>TelephoneNoId</strong> is a foreign key which links Table1 with
+  Table2.
+</p>
+<p>
+  <strong>Rule 3:</strong> Each table records must be uniquely identifided by a
+  primary key. <br />
+  Table-1: primary key: {CustomerId,TelephoneNoId} <br />
+  Table-2: primary key: {TelephoneNoId}
+</p>
+<p>
+  Although the current design contains redundant data but the tables are in
+  First Normal Form. We will improve over this design using 2 Normal Form.
+</p>
+<p>&nbsp;</p>
 <h1 style="text-align: center">
-  <strong><span style="color: #993366">Why OOP?</span></strong>
+  <strong><span style="color: #993366">Second Normal Form(2NF)</span></strong>
 </h1>
+<p>&nbsp;</p>
 <ul>
   <li>
-    <p>Modularity in Code for easier troubleshooting</p>
+    <p>
+      Rules for Second Normal form. A table must satisfy
+      <strong>all</strong> the rules specified below to be in Second Normal
+      Form.
+    </p>
     <ul>
+      <li><p>It is in first normal form.</p></li>
       <li>
         <p>
-          Something has gone wrong, and you have no idea where to look. With OOP
-          you know exactly where to look. If an object functionality is broken
-          you just have to look at its class and fix that functionality.
-            <a
-              href="understand-encapsulation"
-              target="_blank"
-              rel="noopener"
-              >Encapsulation</a
-            
-          >
-          provides modularity in code.
-        </p>
-      </li>
-      <li>
-        <p>
-          Team members can work on multiple objects simultaneously while
-          minimising the chance
-          <span style="font-weight: 400"
-            >that one person might duplicate someone else&rsquo;s
-            functionality</span
-          >
+          A non-prime attribute of a relation is an attribute that is not a part
+          of <strong>any</strong> candidate key of the relation. Table should
+          not have any non-prime attribute that is functionally dependent on any
+          <strong>proper subset</strong> of any candidate key of the
+          relation(also called partial dependency). Since proper subset can also
+          be empty so all non-prime attributes which donot depend on candidate
+          key of table also violates 2NF.
         </p>
       </li>
     </ul>
   </li>
   <li>
     <p>
-      Code reuse using
-      <a href="understand-inheritance"
-      target="_blank"
-        rel="noopener"
-        >Inheritance</a
-      >
-    </p>
-    <ul>
-      <li>
-        <p>
-          In programming, there is a principle of DRY(do not repeat yourself).
-          Code repetition is not good since if you want to change that code you
-          need to change at multiple locations where that code is repeated
-          making the code harder to maintain.
-        </p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Code flexibility</p>
-    <ul>
-      <li>
-        <p>
-          <a
-            href="understand-polymorphism"
-            target="_blank"
-            rel="noopener"
-            >Polymorphism</a
-          >
-          provides different functionality from a method based on the situation
-          through method overriding and method overloading. The same method can
-          have different behaviour. suppose we have a method driveCar()
-          sometimes when this method is invoked driveCar() is driving Mercedes
-          and other time it could be BMW based on whether the car is BMW or
-          Mercedes. You can read about it more
-          <a
-            href="understand-polymorphism"
-            target="_blank"
-            rel="noopener"
-            >here</a
-          >.
-        </p>
-      </li>
-      <li>
-        <p>
-          We can hide the implementation details of a method using the concept
-          of
-          <a href="understand-abstraction"
-            >Abstraction</a
-          >. Implementators of the class can change implementation and no user
-          of the class is affected as long as method signature remains the same.
-        </p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>
-      Object-oriented programming is often the most natural and pragmatic
-      approach, once you get the hang of it. OOP languages allow you to break
-      down your software into bite-sized problems that you then can solve
-      &mdash; one object at a time
+      Once a table is in second normal form, we are guaranteed that every column
+      is dependent on the primary key. When all the columns relate to the
+      primary key, they naturally share a common purpose, such as describing an
+      employee. Every Column of the table should serve to describe what the
+      primary key of the table identifies, if it is not the case then that
+      column must be moved to another table.
     </p>
   </li>
 </ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-<h1 style=\ "text-align: center\"> <strong><span style=\"color: #993366\">What is Database?</span></strong></h1>
-<p>A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Data stored in a database can then be easily accessed, managed, modified, updated, controlled, and organized using a &ldquo;database management system&rdquo;.</p>
-<h1 style=\ "text-align: center\">&nbsp;</h1>
-<h1 style=\ "text-align: center\"> <span style=\"color: #993366\" ><strong>What is Database Management System?</strong></span ></h1>
-<p>A database typically requires a comprehensive database software program known as a database management system (DBMS). A DBMS serves as an interface between the database and its end-users or programs, allowing users to retrieve, update, and manage how the information is organized and optimized. Some examples of popular database software or DBMSs include MySQL, Microsoft Access, Microsoft SQL Server, MongoDB.</p>
-<h1 style=\ "text-align: center\">&nbsp;</h1>
-<h1 style=\ "text-align: center\"> <span style=\"color: #993366\" ><strong>Features of Database Management System</strong></span ></h1>
-<p>&nbsp;</p>
-<ul>
-	<li>
-		<p>Data storage, retrieval and update</p>
-		<ul>
-			<li>
-				<p>All information in a digital repository is organized into a clear hierarchical structure with records, tables or objects. Every piece of information that you can add to your database will be organized in a kind of catalogue, so it will be easier for you to search and update your records later on.</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>Support for transactions and concurrency</p>
-		<ul>
-			<li>
-				<p>Transaction is a collection of operations on the database that are bound together into a single run-time unit. The&nbsp;<span class=\ "topic-highlight\">transaction manager</span > controls and coordinates the execution of transactions within the database.&nbsp; </p>
-         </li>
-         <li>
-            <p> When multiple users are accessing the database at the same time, and at least one is updating data, there may be the case of interference, which can result in data inconsistencies. Concurrency Manager in DBMS facilitates multiple users to access shared data in parallel without data inconsistencies. </p>
-         </li>
-      </ul>
-   </li>
-</ul>
-<ul>
-   <li>
-      <p> Enforcing constraints to ensure data in the database abides by certain rules </p>
-      <ul>
-         <li>
-            <p> You can enforce rules by defining integrity constraints more reliably than by adding logic to your application. There are check constraints, cascades, triggers in DBMS which help to keep database consistent. </p>
-         </li>
-      </ul>
-   </li>
-   <li>
-      <p>Access support from remote locations</p>
-      <ul>
-         <li>
-            <p> Remote database access (RDA) is a protocol standard for database access it includes features for communicating database operations and parameters from the client to the server, in return transporting result data from the server to the client. </p>
-         </li>
-      </ul>
-   </li>
-</ul>
-<p>&nbsp;</p>
-<h1 style=\"text-align: center\"> <span style=\"color: #993366\" ><strong>Challenges to Database Management</strong></span ></h1>
-<p>&nbsp;</p>
-<ul>
-   <li>
-      <p> <span style=\"color: #000000\" ><span style=\"font-weight: 400\" >Absorbing significant increases in data volume.</span ></span > </p>
-      <ul>
-         <li>
-            <p> The explosion of data coming in from sensors, connected machines, and dozens of other source makes it challenging to organize data efficiently. </p>
-         </li>
-      </ul>
-   </li>
-   <li>
-      <p>Ensuring data security</p>
-      <ul>
-         <li>
-            <p> Data breaches are happening everywhere these days, and hackers are getting more inventive. It&rsquo;s more important than ever to ensure that data is secure but also easily accessible to users. </p>
-         </li>
-      </ul>
-   </li>
-   <li>
-      <p>Managing and maintaining the database and infrastructure.</p>
-      <ul>
-         <li>
-            <p> Database administrators must continually watch the database for problems and perform preventative maintenance, as well as apply software upgrades and patches.&nbsp; </p>
-         </li>
-      </ul>
-   </li>
-</ul>
-<h1 style=\"text-align: center\">&nbsp;</h1>
-<h1 style=\"text-align: center\"> <span style="color: #993366"><strong>Challenges Question</strong></span>
-					</h1>
-					<p>&nbsp;</p>
-					<h4><strong>why use Databases instead of a spreadsheet?</strong></h4>
-					<p>Spreadsheets were originally designed for one user. They&rsquo;re great for a single user or a small number of users who don&rsquo;t need to do a lot of incredibly complicated data manipulation. Databases, on the other hand, are designed to hold much larger collections of organized information&mdash;massive amounts, sometimes. Databases allow multiple users at the same time to quickly and securely access and query the data using highly complex logic and language.</p>
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-
-
-
-        <!-- algorithm problems post  -->
-
-          <h1 style="text-align: center;"><strong><span style="color: #993366;">Job Scheduling</span></strong></h1>
-          <p>&nbsp;</p>
-          <p>Given an array of jobs. Each job has an associated deadline and profit with the job if finished before the deadline. Assume each job takes one unit of time to complete. Only one job can be scheduled at a moment. Your task is to maximise the profit earned by jobs.</p>
-          <p><strong>Sample Input:</strong><br /><strong>Deadline:&nbsp; &nbsp;</strong>[ 4, 1, 1, 1 ]<br /><strong>Profit:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong>[ 20, 10, 40, 30 ]</p>
-          <p><strong>Sample Output:</strong><br />60</p>
-          <p><strong>Sample Explanation:</strong><br />Scheduling jobs {c,a} maximises our profit to 60</p>
-          <p><strong>Constraints:</strong><br />0 &lt;= deadline[i] &lt;= 100<br />0 &lt;= profit[i] &lt;=1 000<br />1 &lt;= Number of jobs &lt;=100000</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p><span style="text-decoration: underline;"><strong>Solution</strong></span></p>
-          <p>&nbsp;</p>
-          <script src="https://gist.github.com/PUSHPENDRAKUMAR18270/769ea54e080f152c006d5a3a789e5426.js"></script>
-          <p>&nbsp;</p>
-          <p><strong>Time complexity&nbsp; &nbsp; &nbsp;</strong>O(n log n)<br /><strong>Space complexity&nbsp;</strong>&nbsp; O(1)</p>
-          
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-
-
-
-<!-- practise problems template -->
-<p>Source Credit: love_babar</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Arrays</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>quesitons</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Strings</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>quesitons</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Linked Lists</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>quesitons</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Stacks and Queues</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>quesitons</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Binary Trees</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>quesitons</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Graphs</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>quesitons</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Searching and Sorting</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>quesitons</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Greedy</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>quesitons</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Backtracking</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>quesitons</p>
-<h2 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #003300; text-decoration: underline;">Dynamic Programming</span></strong></span></h2>
-<p>&nbsp;</p>
-<p>questions</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-
-
-//binary search Tree
-<h1 style="text-align: center;"><strong><span style="color: #993366;">Binary Search Tree</span></strong></h1>
-<p>&nbsp;</p>
-<p>Having a sorted array is useful for many tasks because it enables a binary search to be used to efficiently locate elements. The problem with a sorted array is that elements can't be inserted and removed efficiently. The binary search tree is a different way of structuring data so that it can still be binary searched (or a very similar procedure can be used), but it's easier to add and remove elements. Instead of just storing the elements contiguously from least to greatest, the data is maintained in many separate chunks, making adding an element a matter of adding a new chunk of memory and linking it to existing chunks.</p>
-<p><img src="/images/postImages/dsa/bst.png" alt="bst image" /></p>
-<h1 style="text-align: center;">&nbsp;</h1>
-<h1 style="text-align: center;"><strong><span style="color: #993366;">Properties of BST</span></strong></h1>
-<ul>
-<li>
-<p>Binary search tree has a total order defined on it. A total order means a binary comparison operation between elements has been defined, and the elements can be arranged in a unique sequence from smallest to greatest based on this operation. For example, integers or reals with the typical ("natural") order.</p>
-</li>
-<li>
-<p>A binary search tree is a rooted binary tree, whose internal nodes each store a key (and optionally, an associated value), and each has two distinguished sub-trees, commonly denoted left and right. The tree additionally satisfies the binary search property: the key in each node is greater than or equal to any key stored in the left sub-tree, and less than or equal to any key stored in the right sub-tree.</p>
-</li>
-<li>
-<p>An in-order traversal of a binary search tree will always result in a sorted list of node items (numbers, strings or other comparable items).</p>
-</li>
-</ul>
-<h1 style="text-align: center;">&nbsp;</h1>
-<h1 style="text-align: center;"><strong><span style="color: #993366;">Applications of BST</span></strong></h1>
-<ul>
-<li>
-<p>Binary search trees support everything you can get from a sorted array: efficient search, in-order forward/backwards traversal from any given element, predecessor /successor element search, and max /min queries, with the added benefit of efficient inserts and deletes. With a self-balancing binary search tree (BST) like AVL, RBT, all of the above run in logarithmic time.</p>
-</li>
-<li>
-<p>Binary search trees are a fundamental data structure used to construct more abstract data structures such as sets, multisets.
+<p>
+  <span style="text-decoration: underline">
+    <strong
+      ><span style="color: #003300; text-decoration: underline"
+        >Let's apply rules of 2NF to Table-1</span
+      ></strong
+    >
+  </span>
 </p>
-</li>
-<li>
-<p>Binary  serach trees are used in popular data compression technique Huffman coding.</p>
-</li>
+<p>
+  <strong>Rule 1</strong>: It should be in 1NF. We have already normalised it to
+  1NF so this rules is satisfied
+</p>
+<p>
+  <strong>Rule 2:</strong> No non-prime attribute should depend on proper subset
+  of any candidate key of table. we have only one candidate key which is also
+  the primary key of Table-1.<br />
+  <strong>Table-1 candidate key:</strong> {CustomerId,TelephoneId}.<br />
+  <strong>Table-1 functional dependencies:</strong> {CustomerId -&gt;
+  (FirstName,SecondName) }<br />
+  {FirstName, SecondName} are non-prime attributes and they depend on proper
+  subset{CustomerId} of candidate key hence 2NF is violated.
+</p>
+<p>
+  To resolve 2NF violation we divide Table-1 into two tables Table-1.1 and
+  Table-1.2 according to the following rule,<br />
+  Let R be the schema that is not in 2NF due to the functional dependency
+  (X-&gt;Y) then we replace R in our design with (XUY) and (R- (Y-X)). Here
+  X={CustomerId}, Y={FirstName,SecondName},
+  R={CustomerId,FirstName,SecondName,TelephoneNoId}.
+</p>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="border-collapse: collapse; width: 48.1428%; height: 72px"
+    border="1"
+  >
+    <tbody>
+      <tr style="height: 18px">
+        <td style="width: 11.1492%; height: 18px">
+          <strong>CustomerId</strong>
+        </td>
+        <td style="width: 15.6105%; height: 18px">
+          <strong>FirstName</strong>
+        </td>
+        <td style="width: 9.45607%; height: 18px">
+          <strong>SecondName</strong>
+        </td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 11.1492%; height: 18px">1</td>
+        <td style="width: 15.6105%; height: 18px">Sachin</td>
+        <td style="width: 9.45607%; height: 18px">Bisht</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 11.1492%; height: 18px">2</td>
+        <td style="width: 15.6105%; height: 18px">Meghaj</td>
+        <td style="width: 9.45607%; height: 18px">Singh</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 11.1492%; height: 18px">3</td>
+        <td style="width: 15.6105%; height: 18px">Ashutosh</td>
+        <td style="width: 9.45607%; height: 18px">Kumar</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <span style="text-decoration: underline"><strong>Table-1.1</strong></span>
+</p>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="border-collapse: collapse; width: 32.2206%; height: 126px"
+    border="1"
+  >
+    <tbody>
+      <tr style="height: 18px">
+        <td style="width: 8.00127%; height: 18px">
+          <strong>TelephoneId</strong>
+        </td>
+        <td style="width: 3.42466%; height: 18px">
+          <strong>CustomerId</strong>
+        </td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 8.00127%; height: 18px">1</td>
+        <td style="width: 3.42466%; height: 18px">1</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 8.00127%; height: 18px">2</td>
+        <td style="width: 3.42466%; height: 18px">1</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 8.00127%; height: 18px">3</td>
+        <td style="width: 3.42466%; height: 18px">1</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 8.00127%; height: 18px">4</td>
+        <td style="width: 3.42466%; height: 18px">2</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 8.00127%; height: 18px">5</td>
+        <td style="width: 3.42466%; height: 18px">2</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 8.00127%; height: 18px">6</td>
+        <td style="width: 3.42466%; height: 18px">3</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <span style="text-decoration: underline"><strong>Table-1.2</strong></span>
+</p>
+<p>
+  <span style="text-decoration: underline">
+    <span style="color: #333300; text-decoration: underline"
+      ><strong>Let's apply 2NF rules to Table-2 now,</strong></span
+    >
+  </span>
+</p>
+<p>
+  <strong>Table-2 primary key:</strong> {TelephoneNoId}
+  <strong>
+    <br />
+    Table-2 functional dependencies:
+  </strong>
+  {TelephoneNoId-&gt; TelephoneNo}<br />
+  It is clear that Table-2 is already is in 2NF as it satisfies both the rules
+  so there is no need to normalise it.
+</p>
+<p>
+  Our tables Table-1.1, Table-1.2 and Table-2 are normalised to 2NF now. And
+  fortunately they are also in Third Normal Form(read about 3NF below) so we do
+  not have to Normalise them further and these tables can be used in Production
+  database instead of using Table-0.
+</p>
+<p>&nbsp;</p>
+<h1 style="text-align: center">
+  <strong><span style="color: #993366">Third Normal Forms(3NF)</span></strong>
+</h1>
+<p>&nbsp;</p>
+<ul>
+  <li>
+    <p>
+      A transitive dependency is a functional dependency in which X -&gt; Z (X
+      determines Z) indirectly, by virtue of X -&gt; Y and Y -&gt; Z (where it
+      is not the case that Y -&gt; X). Ex. Greater than comparison(&gt;) is
+      transitive since if A is greater than B, and B is greater than C, then it
+      follows that A is greater than C.
+    </p>
+  </li>
+  <li>
+    <p>
+      Rules for Third Normal form. A table must satisfy <strong>all</strong> the
+      rules specified below to be in Third Normal Form.
+    </p>
+    <ul>
+      <li><p>A table is in 2nd normal form.</p></li>
+      <li>
+        <p>
+          It contains only columns that are non-transitively dependent on the
+          primary key that is all the attributes (e.g. database columns) are
+          functionally dependent on <strong>solely</strong> the primary key
+        </p>
+      </li>
+    </ul>
+  </li>
 </ul>
+<p>Let's look at an example to understand it better.</p>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="border-collapse: collapse; width: 59.9359%; height: 72px"
+    border="1"
+  >
+    <tbody>
+      <tr style="height: 18px">
+        <td style="width: 16.4743%; height: 18px">
+          <strong>CustomerId</strong>
+        </td>
+        <td style="width: 20.4508%; height: 18px">
+          <strong>CustomerName</strong>
+        </td>
+        <td style="width: 14.5176%; height: 18px">
+          <strong>CustomerCity</strong>
+        </td>
+        <td style="width: 17.1913%; height: 18px">
+          <strong>CustomerPostalCode</strong>
+        </td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 16.4743%; height: 18px">1</td>
+        <td style="width: 20.4508%; height: 18px">Pushpendra&nbsp;</td>
+        <td style="width: 14.5176%; height: 18px">Mathura</td>
+        <td style="width: 17.1913%; height: 18px">281006</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 16.4743%; height: 18px">2</td>
+        <td style="width: 20.4508%; height: 18px">Sachin</td>
+        <td style="width: 14.5176%; height: 18px">Pune</td>
+        <td style="width: 17.1913%; height: 18px">411015</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 16.4743%; height: 18px">3</td>
+        <td style="width: 20.4508%; height: 18px">Meghaj</td>
+        <td style="width: 14.5176%; height: 18px">Haryana</td>
+        <td style="width: 17.1913%; height: 18px">122011</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <span style="text-decoration: underline"><strong>Table-3</strong></span>
+</p>
+<p>
+  Table-3 is in 2NF. With 2NF we have all attributes depend on primary key but
+  there could be dependencies between columns that could cause inconsistency.
+  There<strong> occurs transitive Dependency:</strong> {CustomerCity -&gt;
+  CustomerPostalCode} in Table-3 as CustomerId -&gt; CustomerCity while
+  CustomerCity is not functionally dependent on CustomerId and CustomerCity
+  -&gt; CustomerPostalCode. This transitive dependency can cause update anomaly
+  as
+  <span style="font-weight: 400"
+    >you could update the CustomerPostalCode without making a corresponding
+    update to the CustomerCity. Hence this transitive dependency needs to be
+    removed.</span
+  >
+</p>
+<p>
+  <span style="text-decoration: underline">
+    <span style="color: #003300"
+      ><strong>Let's normalise Table-3 to 3NF&nbsp;</strong></span
+    >
+  </span>
+</p>
+<p>
+  We divide Table-3 into two tables Table-3.1 and Table-3.2 according to the
+  rule below:<br />
+</p>
+<p>
+  Let R be the schema that is not in 3NF due to the transitive dependency
+  (X-&gt;Y) then we replace R in our design with (XUY) and (R- (Y-X)). Here
+  X={CustomerCity}, Y={CustomerPostalCode},
+  R={CustomerId,CustomerName,CustomerCity,CustomerPostalCode}.
+</p>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="border-collapse: collapse; width: 47.5419%"
+    border="1"
+  >
+    <tbody>
+      <tr>
+        <td style="width: 13.8505%"><strong>CustomerId</strong></td>
+        <td style="width: 14.5708%"><strong>CustomerName</strong></td>
+        <td style="width: 12.283%"><strong>CustomerCity</strong></td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 13.8505%; height: 18px">1</td>
+        <td style="width: 14.5708%; height: 18px">Pushpendra&nbsp;</td>
+        <td style="width: 12.283%; height: 18px">Mathura</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 13.8505%; height: 18px">2</td>
+        <td style="width: 14.5708%; height: 18px">Sachin</td>
+        <td style="width: 12.283%; height: 18px">Pune</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 13.8505%; height: 18px">3</td>
+        <td style="width: 14.5708%; height: 18px">Meghaj</td>
+        <td style="width: 12.283%; height: 18px">Haryana</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <span style="text-decoration: underline"><strong>Table-3.1</strong></span>
+</p>
+<div style="overflow-x: auto">
+  <table
+    class="styledTable"
+    style="border-collapse: collapse; width: 36.2138%; height: 72px"
+    border="1"
+  >
+    <tbody>
+      <tr style="height: 18px">
+        <td style="width: 7.81893%; height: 18px">CustomerCity</td>
+        <td style="width: 14.0583%; height: 18px">CustomerPostalCode</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 7.81893%; height: 18px">Mathura</td>
+        <td style="width: 14.0583%; height: 18px">281006</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 7.81893%; height: 18px">Pune</td>
+        <td style="width: 14.0583%; height: 18px">411015</td>
+      </tr>
+      <tr style="height: 18px">
+        <td style="width: 7.81893%; height: 18px">Haryana</td>
+        <td style="width: 14.0583%; height: 18px">122011</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <span style="text-decoration: underline"><strong>Table-3.2</strong></span>
+</p>
+<p>
+  By dividing Table-3 into two separate tables Table-3.1 and Table-3.2 we have
+  removed the functional dependency from the Table-3 and improved the database
+  design. It is better to use Table-3.1 and Table-3.2 in Production instead of
+  Table-3.
+</p>
+<p>
+  <span style="color: #003300"
+    ><strong
+      >With this, we finished the discussion about Normal Forms. Hope you
+      learned something new here.</strong
+    ></span
+  >
+</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
