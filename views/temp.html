@@ -432,3 +432,41 @@ double, PRIMARY KEY(OrderId) );
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+
+
+
+//binary search Tree
+<h1 style="text-align: center;"><strong><span style="color: #993366;">Binary Search Tree</span></strong></h1>
+<p>&nbsp;</p>
+<p>Having a sorted array is useful for many tasks because it enables a binary search to be used to efficiently locate elements. The problem with a sorted array is that elements can't be inserted and removed efficiently. The binary search tree is a different way of structuring data so that it can still be binary searched (or a very similar procedure can be used), but it's easier to add and remove elements. Instead of just storing the elements contiguously from least to greatest, the data is maintained in many separate chunks, making adding an element a matter of adding a new chunk of memory and linking it to existing chunks.</p>
+<p><img src="/images/postImages/dsa/bst.png" alt="bst image" /></p>
+<h1 style="text-align: center;">&nbsp;</h1>
+<h1 style="text-align: center;"><strong><span style="color: #993366;">Properties of BST</span></strong></h1>
+<ul>
+<li>
+<p>Binary search tree has a total order defined on it. A total order means a binary comparison operation between elements has been defined, and the elements can be arranged in a unique sequence from smallest to greatest based on this operation. For example, integers or reals with the typical ("natural") order.</p>
+</li>
+<li>
+<p>A binary search tree is a rooted binary tree, whose internal nodes each store a key (and optionally, an associated value), and each has two distinguished sub-trees, commonly denoted left and right. The tree additionally satisfies the binary search property: the key in each node is greater than or equal to any key stored in the left sub-tree, and less than or equal to any key stored in the right sub-tree.</p>
+</li>
+<li>
+<p>An in-order traversal of a binary search tree will always result in a sorted list of node items (numbers, strings or other comparable items).</p>
+</li>
+</ul>
+<h1 style="text-align: center;">&nbsp;</h1>
+<h1 style="text-align: center;"><strong><span style="color: #993366;">Applications of BST</span></strong></h1>
+<ul>
+<li>
+<p>Binary search trees support everything you can get from a sorted array: efficient search, in-order forward/backwards traversal from any given element, predecessor /successor element search, and max /min queries, with the added benefit of efficient inserts and deletes. With a self-balancing binary search tree (BST) like AVL, RBT, all of the above run in logarithmic time.</p>
+</li>
+<li>
+<p>Binary search trees are a fundamental data structure used to construct more abstract data structures such as sets, multisets.
+</p>
+</li>
+<li>
+<p>Binary  serach trees are used in popular data compression technique Huffman coding.</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
