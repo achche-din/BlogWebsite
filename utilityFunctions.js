@@ -42,8 +42,8 @@ module.exports.getLinks=function(subject){
     {
         links={
             Arrays:['Introduction to Arrays'],
-            Stack:['All about Stack'],
-            LinkedLists:['Introduction to Linkedlists'],
+            Stack:['Introduction to Stack'],
+            LinkedLists:['Introduction to Linked Lists'],
             HashTables:['Introduction to Hash tables','Open Addressing','Separate Chaining'],
             Trees:['Introduction to Trees','Binary Tree Traversal','Binary Search trees','Heaps'],
             Graphs:['Introduction to Graphs']
