@@ -1,0 +1,11 @@
+<h1 style="text-align: center;"><strong><span style="color: #993366;">Error Control: Introduction</span></strong></h1>
+<p>Error control techniques make use of Redundancy. <strong>Redundancy</strong> is the concept of using extra bits for use in error detection. The sender adds redundant bits (R) to the data unit and sends it to the receiver, when receiver gets bits stream and passes through the checking function. If no error then data portion of the data unit is accepted and redundant bits are discarded. otherwise, retransmission occurs.</p>
+<p>There are two types of errors:<br /><strong><span style="text-decoration: underline;">Single bit errors</span>:</strong> Meaning only one bit of the data changed from 1 to 0 and 0 to 1 causing the error <br /><strong><span style="text-decoration: underline;">Burst Errors:</span> </strong>Meaning two or more bits of the data are changed causing the error.<br />It is not worth sending errors to the receiver so the data link layer provides error control techniques. The <strong>error-detection and correction techniques</strong> allow the receiver to detect the bit errors occurred, but it is not always 100% reliable and can still be a possibility that an undetected bit error is received in the data and receiver will be unaware of it.</p>
+<h1 style="text-align: center;"><strong><span style="color: #993366;">Error Detection Techniques</span></strong></h1>
+<p>&nbsp;</p>
+<h3><span style="text-decoration: underline; background-color: #ffffff; color: #003300;"><strong>Parity Check</strong></span></h3>
+<p>A parity bit, or check bit, is a bit added to a string of binary code. The parity bit ensures that the total number of 1-bits in the string is even or odd. Accordingly, there are two variants of parity bits: an even parity bit and an odd parity bit. In the case of even parity, for a given set of bits, the occurrences of bits whose value is 1 are counted. If that count is odd, the parity bit value is set to 1, making the total count of occurrences of 1s in the whole set (including the parity bit) an even number. If the count of 1s in a given set of bits is already even, the parity bit's value is 0. In the case of odd parity, the coding is reversed.</p>
+<p>
+  1 Dimesional Parity:<br>
+  
+</p>

@@ -26,16 +26,16 @@ module.exports.getLinks=function(subject){
         links={
             ApplicationLayer:['Introduction to Application layer','DNS','DHCP'],
             TransportLayer:['Introduction to Transport layer','TCP','UDP'],
-            NetworkLayer:['Introduction to Network layer','IP','DV algorithm','OSPF algorithm'],
-            DataLinkLayer:['Introduction to Data link layer','Flow control','Error Control','MAC'],
-            PhysicalLayer:['Introduction to Physical layer','Types of Media','Media comparision']
+            NetworkLayer:['Introduction to Network layer','DV algorithm','OSPF algorithm'],
+            DataLinkLayer:['Introduction to Data link layer','Error control','Flow Control','MAC'],
+            PhysicalLayer:['Introduction to Physical layer']
         };
     }
     else if(subject==='operating-system')
     {
         links={
-            Intro:['What is OS?','Why OS?'],
-            Scheduling:['What is Scheduling?','Premptive VS non-Premptive','FCFS','RR'],
+            Introduction:['Introduction to Operating Systems'],
+            Scheduling:['Scheduling','Scheduling Algorithms']
         };
     }
     else if(subject==='data-structures')
