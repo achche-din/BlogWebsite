@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 module.exports.connection=function(){
     //connect with database
+    //mongodb://localhost:27017/blogDb
     mongoose.connect('mongodb+srv://pkc3766:Utr@1010@cluster0.7n9fq.mongodb.net/blogDB?retryWrites=true&w=majority',{
         useNewUrlParser:true,
         useUnifiedTopology: true,
@@ -23,6 +24,15 @@ module.exports.createComposeCollection=function(){
         content:String
     });
     return mongoose.model("compose",composeCollection);
+};
+
+module.exports.createLinksCollection=function(){
+    //connection();
+    const linksCollection = mongoose.Schema({
+        subject:String,
+        links:Object
+    });
+    return mongoose.model("link",linksCollection);
 };
 
 module.exports.createPostsCollection=function(){

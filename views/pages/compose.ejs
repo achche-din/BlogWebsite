@@ -12,28 +12,16 @@
     </script>
     <title>CodeBay</title>
     <link rel="icon" href="/images/icon.png">
-    <link rel="stylesheet" href="/css/composeForm.css">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-v4-rtl/4.6.0-2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script> -->
+    
+    <!-- jquery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <!-- poppermin.js for handling flash messages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js" integrity="sha512-Vp2UimVVK8kNOjXqqj/B0Fyo96SDPj9OCSm1vmYSrLYF3mwIOBXh/yRZDVKo8NemQn1GUjjK0vFJuCSCkYai/A==" crossorigin="anonymous"></script>
 </head>
 <body>
     <script src="/ckEditor/ckeditor.js" type="text/javascript"></script>
@@ -52,21 +40,32 @@
       </div>
     </nav>
     
-    <form action="" method="post">
-       
-        <div class="form-group title" >
-            <input type="text" class="form-control" name="title" placeholder="*title">
+    <form method="post">
+      <div class="row" style="margin:20px;" >
+        <div class="col-md-4">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="enter your email" required>
         </div>
-        <div class="form-row name-email">
-            <div class="col">
-                <input type="text" class="form-control" name="name"  placeholder="*your name">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" name="email" placeholder="*your email">
-            </div>
+        <div class="col-md-4">
+          <label for="Title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="enter Title" required>
+          <div class="invalid-feedback">
+            Empty title
+          </div>
         </div>
-        <textarea name="content" id="editor" cols="10" rows="30" ></textarea>
-        <button type="submit" class="btn btn-primary submitButton">submit</button>
+        <div class="col-md-4">
+          <label for="Title" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="enter your name" required>
+          <div class="invalid-feedback">
+            Empty Name
+          </div>
+        </div>
+        
+      </div>
+      <div style="margin:28px;">
+        <textarea name="content" id="editor" cols="10" rows="30" maxlength="3" required></textarea>
+      </div>
+        <button type="submit" class="btn btn-primary" style=" display:block;margin: 0 auto;">submit</button>
     </form>
     <script>
         CKEDITOR.replace("content");

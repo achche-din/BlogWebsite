@@ -54,8 +54,9 @@
                 </div>
                 <ul class="list-unstyled components">
                     
-                    <%for(const [prop, val] of entries) {%>
+                    <%for(let [prop, val] of entries) {%>
                         <!-- <p><%=prop%></p> -->
+                        <%prop=_.kebabCase(prop);%>
                         <li class="active">
                             <a href='#<%=prop%>' data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><%=prop%></a>
                             <ul class="collapse list-unstyled" id='<%=prop%>' >
@@ -71,10 +72,7 @@
                             </ul>
                         </li>
                     <%}%> 
-                </ul>
-                
-                
-                
+                </ul>   
             </nav>
         <%}%>
 
@@ -115,10 +113,6 @@
         </div>
     </div>
     
-    
-    
-    
-   
     <%if(links!=null){%>
         <%let temp="";%>
         <%if(parentTopic.length!=0){%>
