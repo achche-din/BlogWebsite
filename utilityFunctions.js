@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
-const app = require(__dirname+"/app.js");
+// const mongoose = require('mongoose');
+// const path = require('path')
+const app = require('./app');
 
 module.exports.renderPost=function(response,path,subject,title){
     let content='Content not available as of now? We are writing. Thankyou! for your patience';
