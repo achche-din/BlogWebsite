@@ -2,7 +2,6 @@ const express = require('express');
 // const path = require('path')
 var blogCRUDRouter = express.Router()
 const app = require('../app')
-// const DB = require(path.join(__dirname,'..','DB/schema.js'));
 
 blogCRUDRouter.get("/find/:subject",(request,response)=>{
     const linksModel = app.linksModel
@@ -18,7 +17,7 @@ blogCRUDRouter.get("/find/:subject",(request,response)=>{
             let links = res.links;
             // console.log(prep,subject);
             response.render("pages/ContentCRUD/FindOne",
-                {'documentTitle':'admin','prep':prep,'subject':subject,
+                {'prep':prep,'subject':subject,
                         'links':links})
         }
     });
@@ -48,7 +47,7 @@ blogCRUDRouter.get("/find",function(request,response){
     ;
 })
 
-blogCRUDRouter.patch("/:postTitle/save",(request,response)=>{
+blogCRUDRouter.post("/:postTitle/save",(request,response)=>{
     const postModel = app.postModel
     let postTitle = request.params['postTitle']
     let content = request.body['content']
@@ -58,15 +57,12 @@ blogCRUDRouter.patch("/:postTitle/save",(request,response)=>{
             if(err)
             {
                 console.log(err)
+                response.send(err)
             }
             else{
-                request.session.message = {
-                    type: 'success',
-                    intro: 'Submitted',
-                    message: 'your article has been updated successfully'
-                }
-                res.send("updated successfully")
+                response.send("updated successfully")
             }
+           
         }
     )
 
@@ -86,7 +82,6 @@ blogCRUDRouter.get("/:subject/:postTitle/edit",function(request,response){
             // console.log(res)
             let documentTitle = 'edit-'+res.title
             response.render('pages/ContentCRUD/EditBlog',{
-                documentTitle:documentTitle,
                 res:res
             })
         }

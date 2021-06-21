@@ -1,8 +1,17 @@
 <%- include('../../partials/top') %>
+<link rel="stylesheet" href="/css/Modal.css">
+<title>Admin</title>
+</head>
 <body>
+    <%- include('./Modals/BaseLink') %>
     <div style="text-align: center;">
         <h2><%=subject%></h2>
+        <div style=" position:absolute;right: 20px;top:10px; text-align: end; width: fit-content;">
+            <a id="baseLink"><i class="fas fa-2x fa-plus-circle"></i></a>
+        </div>
     </div>
+    
+    <script src="/scripts/Modal.js"></script>
     <%let entries=Object.entries(links)%>
     <%let ind=0%>
     <div id="accordion">
@@ -15,7 +24,7 @@
                                 <%=prop%>
                             </button>
                             <div style=" position:absolute;right: 20px;top:10px; text-align: end; width: fit-content;">
-                                <a href="#"><i class="fas fa-plus-circle"></i></a>
+                                <a ><i class="fas fa-plus-circle"></i></a>
                             </div>
                             
                         </h5>
@@ -28,7 +37,7 @@
                                 <div style="padding: 10px;border: 2px solid black;margin:10px;">
                                     <div class="d-flex bd-highlight">
                                         <div class="p-2 flex-fill bd-highlight"><%=j%></div>
-                                        <div class="p-2 flex-fill bd-highlight"><a href="/<%=prep%>/<%=subject%>/<%=postTitle%>"><%=val[j]%></a></div>
+                                        <div class="p-2 flex-fill w-100 bd-highlight"><a href="/<%=prep%>/<%=subject%>/<%=postTitle%>"><%=val[j]%></a></div>
                                         <div class="p-2 flex-fill bd-highlight"><a href="/blog/<%=subject%>/<%=postTitle%>/edit"><i class="fas fa-edit"></i></a></div>
                                         <div class="p-2 flex-fill bd-highlight"><a href="#"><i class="fas fa-trash"></i></a></div>
                                       </div>
