@@ -49,6 +49,26 @@ blogCRUDRouter.get("/find",function(request,response){
 })
 
 blogCRUDRouter.patch("/:postTitle/save",(request,response)=>{
+    const postModel = app.postModel
+    let postTitle = request.params['postTitle']
+    let content = request.body['content']
+    postModel.updateOne({title:postTitle},
+        {content:content},
+        (err,res)=>{
+            if(err)
+            {
+                console.log(err)
+            }
+            else{
+                request.session.message = {
+                    type: 'success',
+                    intro: 'Submitted',
+                    message: 'your article has been updated successfully'
+                }
+                res.send("updated successfully")
+            }
+        }
+    )
 
 })
 

@@ -2,12 +2,20 @@
 <body>
     
     <script src="/ckEditor/ckeditor.js" type="text/javascript"></script>
-    <div style="margin:28px;">
-        <textarea name="content" id="editor" cols="10" rows="30" maxlength="3" required>
-            <%=res.content%>
-        </textarea>
-    </div>
-    <button type="submit" class="btn btn-primary" style=" display:block;margin: 0 auto;">save</button>
+    <% if(message){ %>
+        <div style="text-align: center" class="alert alert-<%=message.type%>">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong><%=message.intro%></strong> <%=message.message%>
+        </div>
+    <% } %>
+    <form action="patch">
+        <div style="margin:28px;">
+            <textarea name="content" id="editor" cols="10" rows="30" maxlength="3" required>
+                <%=res.content%>
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style=" display:block;margin: 0 auto;">save</button>    
+    </form>
     
     <script>
         CKEDITOR.replace("content");
