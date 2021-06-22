@@ -26,7 +26,8 @@ module.exports.renderPost=function(response,path,subject,title){
                         content = res[0].content;
                     if(subject!="practice")
                         response.render(path,{subject:subject,title:title,links:links,content:content});
-                    else{
+                    else
+                    {
                         response.render(path,{links:links,content:content});
                     }
                 }

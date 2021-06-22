@@ -1,17 +1,18 @@
 <%- include('../../partials/top') %>
-<link rel="stylesheet" href="/css/Modal.css">
 <title>Admin</title>
 </head>
 <body>
-    <%- include('./Modals/BaseLink') %>
-    <div style="text-align: center;">
+    <div style="text-align: center;padding:20px;">
         <h2><%=subject%></h2>
         <div style=" position:absolute;right: 20px;top:10px; text-align: end; width: fit-content;">
-            <a id="baseLink"><i class="fas fa-2x fa-plus-circle"></i></a>
+            <!-- <a id="baseLink"><i class="fas fa-2x fa-plus-circle"></i></a> -->
+            <!-- Button trigger Base Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#BaseModalCenter">
+                Add Topic
+            </button>
         </div>
     </div>
-    
-    <script src="/scripts/Modal.js"></script>
+    <%- include('./Modals/BaseModal',{subject:subject}) %>
     <%let entries=Object.entries(links)%>
     <%let ind=0%>
     <div id="accordion">
@@ -23,9 +24,15 @@
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%=ind%>" aria-expanded="true" aria-controls="collapse<%=ind%>">
                                 <%=prop%>
                             </button>
-                            <div style=" position:absolute;right: 20px;top:10px; text-align: end; width: fit-content;">
+                            
+                            <!-- <div style=" position:absolute;right: 20px;top:10px; text-align: end; width: fit-content;">
                                 <a ><i class="fas fa-plus-circle"></i></a>
-                            </div>
+                            </div> -->
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ChildModalCenter<%=ind%>"
+                                style=" position:absolute;right: 20px;top:10px; text-align: end; width: fit-content;">
+                                Add SubTopic
+                            </button>
+                            <%- include('./Modals/ChildModal',{subject:subject,topic:prop,ind:ind}) %>
                             
                         </h5>
                     </div>
