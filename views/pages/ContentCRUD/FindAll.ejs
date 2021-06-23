@@ -1,29 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<%- include('../../partials/top') %>
+<title>Subjects</title>
 </head>
 <body>
+    <h1 style="text-align: center;color:blueviolet;margin-top:30px;">Subjects</h1>
     <%for(var i=0;i<subjects.length-1;i++){%>
-        <h1><%=subjects[i]%></h1>
-        <%let entries=Object.entries(links[i])%>
-        <%for(let [prop, val] of entries) {%>
-            <!-- <p><%=prop%></p> -->
-            <!-- <%prop=_.kebabCase(prop);%>     -->
-            <h1><%=prop%></h1>
-            <ul>
-                <%for(var j=0;j<val.length;j++){%>
-                    <li>
-                        <%let postTitle=_.kebabCase(val[j]);%>
-                        <a href="/<%=prep[i]%>/<%=subjects[i]%>/<%=postTitle%>"><%=val[j]%></a>
-                    </li>
-                <%}%>
-            </ul>
-            
-        <%}%>
+        <div style="padding:20px;border: 2px solid black;margin:10px 40px 10px 40px;">
+            <a href="/blog/find/<%=subjects[i]%>"><%=subjects[i]%></a>
+        </div>
     <%}%>
 </body>
 </html>

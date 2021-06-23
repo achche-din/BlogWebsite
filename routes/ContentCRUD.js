@@ -1,5 +1,5 @@
 const express = require('express');
-// const path = require('path')
+const _ = require('lodash')
 var blogCRUDRouter = express.Router()
 const app = require('../app');
 
@@ -32,22 +32,17 @@ blogCRUDRouter.get("/find",function(request,response){
         }
         else{
             let subjects=[];
-            let topics=[]
-            let prep=[]
             for(var i=0;i<res.length;i++)
             {
-                prep.push(res[i].prep)
                 subjects.push(res[i].subject);
-                topics.push(res[i].links);
             }
-            response.render("pages/ContentCRUD/FindAll",{'prep':prep,'subjects':subjects,
-                    'links':topics})
+            response.render("pages/ContentCRUD/FindAll",{'subjects':subjects})
         }
     })
     ;
 })
 
-blogCRUDRouter.post("/:postTitle/save",(request,response)=>{
+blogCRUDRouter.post("/:subject/:postTitle/save",(request,response)=>{
     const postModel = app.postModel
     let postTitle = request.params['postTitle']
     let content = request.body['content']
@@ -59,8 +54,10 @@ blogCRUDRouter.post("/:postTitle/save",(request,response)=>{
                 console.log(err)
                 response.send(err)
             }
-            else{
-                response.send("updated successfully")
+            else
+            {
+                let redirectURL = "/blog/find/"+request.params['subject']
+                response.redirect(redirectURL)
             }
            
         }
@@ -78,18 +75,10 @@ blogCRUDRouter.get("/:subject/:postTitle/edit",(request,response)=>{
         {
             response.send(err)
         }
-        else{
-            if(res==null)
-            {
-                console.log('hii');
-                response.send('Post Content Not available');
-            }
-            else{
-                response.render('pages/ContentCRUD/EditBlog',{
-                    res:res
-                });
-            }
-           
+        else{    
+            response.render('pages/ContentCRUD/EditBlog',{
+                subject:subject,res:res
+            });
         }
     }) 
 })
@@ -149,8 +138,21 @@ blogCRUDRouter.post("/:subject/:topic/add-subtopic",(request,response)=>{
                 }
                 else
                 {
-                    let redirectionURL = "/blog/find/"+subject;
-                    response.redirect(redirectionURL)
+                    let post = new app.postModel({
+                        title:_.kebabCase(subTopicToBeAdded),
+                        content:""
+                    })
+                    post.save((err,res)=>{
+                        if(err)
+                        {
+                            res.send(err);
+                        }
+                        else
+                        {
+                            let redirectionURL = "/blog/find/"+subject;
+                            response.redirect(redirectionURL)
+                        }
+                    })
                 }
             })
         }

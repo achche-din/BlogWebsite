@@ -16,14 +16,16 @@ module.exports.renderPost=function(response,path,subject,title){
             const postModel = app.postModel;
             if(res.length!=0)
                 links=res[0].links;
-            postModel.find({title:title},function(err,res){
+            postModel.findOne({title:title},function(err,res){
                 if(err){
                     console.log(err);
                     response.json(err);
                 }
                 else{
-                    if(res.length!=0)
-                        content = res[0].content;
+                    if(res.content!="")
+                    {
+                        content=res.content;
+                    }
                     if(subject!="practice")
                         response.render(path,{subject:subject,title:title,links:links,content:content});
                     else
