@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 module.exports.connection=function(){
     //connect with database
-    //'mongodb+srv://pkc3766:Utr@1010@cluster0.7n9fq.mongodb.net/blogDB?retryWrites=true&w=majority'
-    //
-    mongoose.connect('mongodb://localhost:27017/blogDb',{
+    //'mongodb://localhost:27017/blogDb'
+    mongoose.connect('mongodb+srv://pkc3766:Utr@1010@cluster0.7n9fq.mongodb.net/blogDB?retryWrites=true&w=majority',{
         useNewUrlParser:true,
         useUnifiedTopology: true,
         useCreateIndex: true,
