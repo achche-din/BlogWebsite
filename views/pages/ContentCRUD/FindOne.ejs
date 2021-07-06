@@ -1,0 +1,56 @@
+<%- include('../../partials/top') %>
+<title>Admin</title>
+</head>
+<body>
+    <div style="text-align: center;padding:20px;">
+        <h2><%=subject%></h2>
+        <div style=" position:absolute;right: 20px;top:10px; text-align: end; width: fit-content;">
+            <!-- <a id="baseLink"><i class="fas fa-2x fa-plus-circle"></i></a> -->
+            <!-- Button trigger Base Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#BaseModalCenter">
+                Add Topic
+            </button>
+        </div>
+    </div>
+    <%- include('./Modals/BaseModal',{subject:subject}) %>
+    <%let entries=Object.entries(links)%>
+    <%let ind=0%>
+    <div id="accordion">
+        <%for(let [prop, val] of entries) {%>
+            <%ind+=1%>
+                <div class="card">
+                    <div class="card-header" id="heading<%=ind%>">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%=ind%>" aria-expanded="true" aria-controls="collapse<%=ind%>">
+                                <%=prop%>
+                            </button>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ChildModalCenter<%=ind%>"
+                                style=" position:absolute;right: 20px;top:10px; text-align: end; width: fit-content;">
+                                Add SubTopic
+                            </button>
+                            <%- include('./Modals/ChildModal',{subject:subject,topic:prop,ind:ind}) %>
+                            
+                        </h5>
+                    </div>
+            
+                    <div id="collapse<%=ind%>" class="collapse" aria-labelledby="heading<%=ind%>" data-parent="#accordion">
+                        <div class="card-body">
+                            <%for(var j=0;j<val.length;j++){%>
+                                <%let postTitle=_.kebabCase(val[j]);%>
+                                <div style="padding: 10px;border: 2px solid black;margin:10px;">
+                                    <div class="d-flex bd-highlight">
+                                        <div class="p-2 flex-fill bd-highlight"><%=j%></div>
+                                        <div class="p-2 flex-fill w-100 bd-highlight"><a href="/<%=prep%>/<%=subject%>/<%=postTitle%>"><%=val[j]%></a></div>
+                                        <div class="p-2 flex-fill bd-highlight"><a href="/blog/<%=subject%>/<%=postTitle%>/edit"><i class="fas fa-edit"></i></a></div>
+                                        <div class="p-2 flex-fill bd-highlight"><a href="#"><i class="fas fa-trash"></i></a></div>
+                                      </div>
+                                    
+                                </div>
+                            <%}%>
+                        </div>
+                    </div>
+                </div> 
+        <%}%>
+    </div>
+</body>
+<%- include('../../partials/bottom') %>
