@@ -15,6 +15,7 @@
     <%- include('./Modals/BaseModal',{subject:subject}) %>
     <%let entries=Object.entries(links)%>
     <%let ind=0%>
+    <%let deleteTopicInd=0%>
     <div id="accordion">
         <%for(let [prop, val] of entries) {%>
             <%ind+=1%>
@@ -42,7 +43,14 @@
                                         <div class="p-2 flex-fill bd-highlight"><%=j%></div>
                                         <div class="p-2 flex-fill w-100 bd-highlight"><a href="/<%=prep%>/<%=subject%>/<%=postTitle%>"><%=val[j]%></a></div>
                                         <div class="p-2 flex-fill bd-highlight"><a href="/blog/<%=subject%>/<%=postTitle%>/edit"><i class="fas fa-edit"></i></a></div>
-                                        <div class="p-2 flex-fill bd-highlight"><a href="#"><i class="fas fa-trash"></i></a></div>
+                                        <div class="p-2 flex-fill bd-highlight">
+                                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#DeleteConfirmationModalCenter<%=j%>">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                            <%- include('./Modals/DeleteConfirmationModal',{subject:subject,topic:prop,subTopic:val[j],ind:deleteTopicInd}) %>
+                                            <%deleteTopicInd+=1%>
+                                            <!-- <a href="/blog/<%=subject%>/<%=postTitle%>/delete"><i class="fas fa-trash"></i></a> -->
+                                        </div>
                                       </div>
                                     
                                 </div>

@@ -83,6 +83,46 @@ blogCRUDRouter.get("/:subject/:postTitle/edit",(request,response)=>{
     }) 
 })
 
+blogCRUDRouter.get("/:subject/:topic/:postTitle/delete",(request,response)=>{
+    let subject = request.params['subject']
+    let topic = request.params['topic']
+    let postTitle = request.params['postTitle']
+    const postModel = app.postModel
+    const linkModel = app.linksModel
+    linkModel.findOne({subject:subject},(err,res)=>{
+        if(err)
+        {
+            response.send(err);
+        }
+        else{
+            let links = res.links;
+            let arr = links[topic]
+            let ind = arr.indexOf(postTitle);
+            if(ind>-1)
+            {
+                arr.splice(ind,1);
+                linkModel.updateOne({subject:subject},{links:links},(err)=>{
+                    if(!err)
+                    {
+                        postModel.deleteOne({title:postTitle},(err)=>{
+                            if(err)
+                            {
+                                response.send(err)
+                            }
+                            else{    
+                                let redirectionURL = "/blog/find/"+subject;
+                                response.redirect(redirectionURL)
+                            }
+                        })
+                    }
+                })
+            }
+             
+        }
+    })
+})
+
+
 blogCRUDRouter.post("/:subject/add-topic",(request,response)=>{
     let subject = request.params['subject'];
     let topicToBeAdded = request.body['topic'];
