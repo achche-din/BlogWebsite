@@ -43,7 +43,7 @@ app.use(passport.setAuthenticatedUser);
 app.use('/', require('./routes'));
 
 //BlogCRUD router
-app.use('/blog',require('./routes/ContentCRUD'))
+//app.use('/blog',require('./routes/ContentCRUD'))
 
 //BlogContent router
 app.use(require('./routes/BlogContent'))

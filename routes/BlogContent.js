@@ -35,17 +35,8 @@ blogContentRouter.get("/cs-fundamentals/:subject/:title",function(req,res){
 blogContentRouter.get("/dsa/:subject/:title",function(req,res){
     const subject = req.params.subject;
     let title = _.kebabCase(req.params.title);
-    let path="";
-    if(subject=='practice')
-    {
-        title = title+"-practice-problems";
-        path='pages/dsa/practiceProblems';
-        utilityFunctions.renderPost(res,path,subject,title);
-    }
-    else{
-        path='pages/dsa/post';
-        utilityFunctions.renderPost(res,path,subject,title);
-    }
+    let path='pages/dsa/post';
+    utilityFunctions.renderPost(res,path,subject,title);
 });
 
 blogContentRouter.get("/dsa/:subject",function(req,res){
@@ -54,11 +45,12 @@ blogContentRouter.get("/dsa/:subject",function(req,res){
     let title="";//default post to display
     if(subject=='practice')
     {
-        path='pages/dsa/practiceProblems';
-        utilityFunctions.renderPost(res,path,subject,'arrays-practice-problems');
+        // path='pages/dsa/practiceProblems';
+        title = 'arrays-practice-problems';
+        // utilityFunctions.renderPost(res,path,subject,);
     }
-    else{
-        if(subject=='algorithms')
+    // else{
+        else if(subject=='algorithms')
         {
             title='introduction-to-algorithms';
         }
@@ -67,7 +59,7 @@ blogContentRouter.get("/dsa/:subject",function(req,res){
             title='introduction-to-data-structures';
         }
         utilityFunctions.renderPost(res,path,subject,title);
-    } 
+    // } 
 });
 
 
