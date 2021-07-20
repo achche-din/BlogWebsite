@@ -21,7 +21,7 @@ blogContentRouter.get("/cs-fundamentals/:subject",function(req,res){
     {
         title='introduction-to-database';
     }
-    
+    else if(subject=='operating-system')title='introduction-to-operating-systems';
     utilityFunctions.renderPost(res,path,subject,title);
 });
 

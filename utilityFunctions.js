@@ -27,22 +27,11 @@ module.exports.renderPost=function(response,path,subject,title){
                     response.json(err);
                 }
                 else{
-                    if(res==null)
-                    {
-                        response.send("error occured please try again!!");
-                        return;
-                    }
-                    if(res.content!="")
+                    if(res!=null&&res.content!="")
                     {
                         content=res.content;
                     }
-                    // if(subject!="practice")
-                        response.render(path,{subject:subject,title:title,links:links,content:content});
-                    // else
-                    // {
-                        // console.log(links);
-                        // response.render(path,{links:links,content:content});
-                    // }
+                    response.render(path,{subject:subject,title:title,links:links,content:content});
                 }
             })
         }
